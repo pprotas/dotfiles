@@ -38,3 +38,9 @@ export FZF_CTRL_T_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{**/node_mod
 
 # Ruby
 eval "$(rbenv init - zsh)"
+# export GEM_HOME=$HOME/.gem
+# export GEM_PATH=$GEM_HOME/bin
+# export PATH=$GEM_PATH:$PATH
+
+# H1
+export HACKERONE_ON_DOCKER=true

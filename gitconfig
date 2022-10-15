@@ -1,6 +1,6 @@
 [user]
 	name = Pawel Protas
-	email = contact@pawelprotas.com
+	email = pawel@hackerone.com
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
