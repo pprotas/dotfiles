@@ -21,9 +21,12 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 export LANG=en_US.UTF-8 # For some reason IntelliJ terminal displays ghost characters without this
 
+# LunarVim
+export PATH=$PATH:$HOME/.local/bin
+
 # NVM
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+#   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+#   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 fpath=($fpath "${HOME}/.zfunctions") # No idea what this does
