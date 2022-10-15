@@ -1,28 +1,45 @@
 #!/bin/bash
-############################
-# .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
-############################
 
-########## Variables
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-files="config/nvim/init.vim config/lvim/config.lua gitconfig gitignore_global hushlogin ideavimrc tmux.conf vimrc zshrc zshrc-linux zshrc-mac"    # list of files/folders to symlink in homedir
+# Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-##########
+# Install Starship
+brew install starship
 
-# create dotfiles_old in homedir
+# Install FiraCode Nerd Font
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code-nerd-font
+
+# Install NeoVim
+brew install --HEAD neovim
+
+# Install LunarVim
+LV_BRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
+
+# Install rbenv
+brew install rbenv ruby-build
+
+# Install zsh-vi-mode
+brew install zsh-vi-mode
+
+# Symlink source-controlled dotfiles to home directory
+dir=~/dotfiles
+olddir=~/dotfiles_old            
+files="config/nvim/init.vim config/lvim/config.lua gitconfig gitignore_global hushlogin ideavimrc tmux.conf vimrc zshrc zshrc-linux zshrc-mac"    r
+
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
 echo "...done"
 
-# change to the dotfiles directory
 echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
     mv ~/.$file ~/dotfiles_old/
