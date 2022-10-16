@@ -46,6 +46,8 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 lvim.keys.normal_mode["<Leader>gl"] = false
 
+lvim.keys.normal_mode["<Leader>de"] = "<Cmd>lua require(\"dapui\").eval()<CR>"
+lvim.keys.visual_mode["<Leader>de"] = "<Cmd>lua require(\"dapui\").eval()<CR>"
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["D"] = { "<cmd>DBUIToggle<CR>", "Database Explorer" }
 lvim.builtin.which_key.mappings["gl"] = { "<cmd>Git blame<CR>", "Blame" }
