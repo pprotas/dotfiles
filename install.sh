@@ -19,7 +19,7 @@ brew install --cask font-fira-code-nerd-font
 brew install --HEAD neovim
 
 # Install LunarVim
-LV_BRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
 
 # Install rbenv
 brew install rbenv ruby-build
