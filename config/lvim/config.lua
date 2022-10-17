@@ -46,8 +46,8 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 lvim.keys.normal_mode["<Leader>gl"] = false
 
-lvim.keys.normal_mode["<Leader>de"] = "<Cmd>lua require(\"dapui\").eval()<CR>"
-lvim.keys.visual_mode["<Leader>de"] = "<Cmd>lua require(\"dapui\").eval()<CR>"
+-- lvim.keys.normal_mode["<Leader>de"] = "<Cmd>lua require(\"dapui\").eval()<CR>"
+-- lvim.keys.visual_mode["<Leader>de"] = "<Cmd>lua require(\"dapui\").eval()<CR>"
 
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["D"] = { "<cmd>DBUIToggle<CR>", "Database Explorer" }
@@ -161,22 +161,22 @@ linters.setup {
   },
 }
 
-lvim.builtin.dap.active = true
-local dap = require('dap')
-dap.adapters.chrome = {
-  type = 'executable',
-  command = 'chrome-debug-adapter',
-}
-dap.configurations.javascript = {
-  {
-    type = 'chrome',
-    request = 'launch',
-    name = 'H1 JavaScript Debug',
-    url = 'http://localhost:8080',
-    webRoot = '${workspaceFolder}',
-    sourceMaps = true
-  }
-}
+-- lvim.builtin.dap.active = true
+-- local dap = require('dap')
+-- dap.adapters.chrome = {
+--   type = 'executable',
+--   command = 'chrome-debug-adapter',
+-- }
+-- dap.configurations.javascript = {
+--   {
+--     type = 'chrome',
+--     request = 'launch',
+--     name = 'H1 JavaScript Debug',
+--     url = 'http://localhost:8080',
+--     webRoot = '${workspaceFolder}',
+--     sourceMaps = true
+--   }
+-- }
 
 -- Additional Plugins
 lvim.builtin.treesitter.rainbow.enable = true
