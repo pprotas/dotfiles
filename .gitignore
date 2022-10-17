@@ -1,2 +1,5 @@
 config/iterm2
+config/lvim.old
 config/lvim/plugin
+config/lvim/ignore
+yarn
