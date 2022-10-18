@@ -11,7 +11,7 @@ plugins=(zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias vim='nvim'
+alias vim='lvim'
 alias sudo='sudo '
 
 # General shell exports
