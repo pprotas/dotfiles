@@ -21,6 +21,9 @@ brew install --HEAD neovim
 # Install LunarVim
 LV_BRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
 
+# Install tmux
+brew install tmux
+
 # Install rbenv
 brew install rbenv ruby-build
 
