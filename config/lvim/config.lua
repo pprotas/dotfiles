@@ -33,6 +33,9 @@ lvim.builtin.which_key.mappings["x"] = {
 -- ToDo
 -- TODO: Add ToDo keymappings
 
+-- ZenMode
+-- TODO: Add ZenMode keymap
+
 -- PLUGINS --
 -- Terminal
 lvim.builtin.terminal.active = true
@@ -203,6 +206,9 @@ lvim.plugins = {
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
+  },
+  {
+    "folke/twilight.nvim"
   },
   -- Window management --
   {
