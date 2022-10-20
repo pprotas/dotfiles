@@ -30,6 +30,9 @@ lvim.builtin.which_key.mappings["x"] = {
 -- Replace quickfix diagnostics with Trouble
 -- Replace quickfix window find references with Trouble
 
+-- ToDo
+-- TODO: Add ToDo keymappings
+
 -- PLUGINS --
 -- Terminal
 lvim.builtin.terminal.active = true
@@ -189,6 +192,13 @@ lvim.plugins = {
     config = function()
       require('neoscroll').setup()
     end
+  },
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    config = function()
+      require("todo-comments").setup()
+    end,
   },
   {
     "folke/trouble.nvim",
