@@ -18,6 +18,12 @@ lvim.keys.visual_mode["<Leader>de"] = "<Cmd>lua require(\"dapui\").eval()<CR>"
 
 -- WhichKey
 lvim.builtin.which_key.mappings["D"] = { "<cmd>DBUIToggle<CR>", "Database Explorer" }
+lvim.builtin.which_key.mappings["x"] = {
+  name = "Session",
+  c = { "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
+  l = { "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore last session" },
+  Q = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
+}
 
 -- PLUGINS --
 -- Terminal
@@ -94,6 +100,15 @@ linters.setup {
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
     filetypes = { "javascript", "javascriptreact" },
   },
+}
+
+-- AUTOCOMMANDS --
+lvim.autocommands = {
+  -- {
+  --   "VimEnter", {
+  --     command = "lua require(\"persistence\").load({last = true})"
+  --   }
+  -- }
 }
 
 -- PLUGINS --
@@ -191,6 +206,17 @@ lvim.plugins = {
           -- enables default keybindings (A-hjkl) for normal mode
           enable_default_keybindings = true,
         },
+      }
+    end,
+  },
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+    module = "persistence",
+    config = function()
+      require("persistence").setup {
+        dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
+        options = { "buffers", "curdir", "tabpages", "winsize" },
       }
     end,
   },
