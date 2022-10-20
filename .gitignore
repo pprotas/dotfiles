@@ -1,4 +1,5 @@
 config/iterm2
+config/nvim/sessions
 config/lvim.old
 config/lvim/plugin
 config/lvim/ignore
