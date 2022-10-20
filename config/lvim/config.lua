@@ -25,6 +25,11 @@ lvim.builtin.which_key.mappings["x"] = {
   Q = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
 }
 
+-- Trouble
+-- TODO: Add Trouble keymappings
+-- Replace quickfix diagnostics with Trouble
+-- Replace quickfix window find references with Trouble
+
 -- PLUGINS --
 -- Terminal
 lvim.builtin.terminal.active = true
@@ -184,6 +189,10 @@ lvim.plugins = {
     config = function()
       require('neoscroll').setup()
     end
+  },
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
   },
   -- Window management --
   {
