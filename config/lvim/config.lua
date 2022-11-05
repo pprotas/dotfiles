@@ -1,20 +1,57 @@
 -- GENERAL --
 lvim.log.level = "warn"
 lvim.format_on_save = true
+vim.opt.relativenumber = true
+vim.opt.wrap = true
+vim.opt.showbreak = "↪ "
 
 -- APPEARANCE --
 lvim.colorscheme = "onedarker"
 
 -- KEYMAPPINGS --
+-- Disable unwanted standard keymaps
+lvim.builtin.which_key.mappings["/"] = nil
+lvim.builtin.which_key.vmappings["/"] = nil
+lvim.builtin.which_key.mappings["g"].k = nil
+lvim.builtin.which_key.mappings["g"].d = nil
+lvim.builtin.which_key.mappings["g"].j = nil
+lvim.builtin.which_key.mappings["g"].R = nil
+lvim.builtin.which_key.mappings["g"].r = nil
+lvim.builtin.which_key.mappings["g"].u = nil
+lvim.builtin.which_key.mappings["g"].s = nil
+lvim.builtin.which_key.mappings["g"].p = nil
+
 lvim.leader = "space"
+lvim.keys.normal_mode["j"] = "gj"
+lvim.keys.normal_mode["k"] = "gk"
+lvim.keys.visual_mode["j"] = "gj"
+lvim.keys.visual_mode["k"] = "gk"
+
+-- Emacs keybinds in INSERT mode
+lvim.keys.insert_mode["<C-a>"] = "<Home>"
+lvim.keys.insert_mode["<C-b>"] = "<Left>"
+lvim.keys.insert_mode["<C-f>"] = "<Right>"
+lvim.keys.insert_mode["<C-e>"] = "<End>"
+lvim.keys.insert_mode["<M-b>"] = "<C-Left>"
+lvim.keys.insert_mode["<M-f>"] = "<C-Right>"
+
+-- Copilot
+lvim.keys.insert_mode["<C-CR>"] = "<Cmd>lua require(\"copilot.suggestion\").accept()<CR>"
+lvim.keys.insert_mode["<C-\\>"] = "<Cmd>lua require(\"copilot.suggestion\").dismiss()<CR>"
 
 -- Use fugitive Git blame
-lvim.keys.normal_mode["<Leader>gl"] = false
-lvim.builtin.which_key.mappings["<Leader>gl"] = { "<Cmd>Git blame<CR>", "Blame" }
+lvim.keys.normal_mode["<Leader>gl"] = "<Cmd>Git blame<CR>"
+lvim.builtin.which_key.mappings["gl"] = { "<Cmd>Git blame<CR>", "Blame" }
 
 -- DAPUI
-lvim.keys.normal_mode["<Leader>de"] = "<Cmd>lua require(\"dapui\").eval()<CR>"
-lvim.keys.visual_mode["<Leader>de"] = "<Cmd>lua require(\"dapui\").eval()<CR>"
+lvim.builtin.which_key.mappings["de"] = { "Cmdlua require(\"dapui\").eval()<CR>", "Evaluate Statement" }
+lvim.builtin.which_key.vmappings["d"] = {
+  name = "Debug",
+  e = {
+    "Cmdlua require(\"dapui\").eval()<CR>",
+    "Evaluate Statement"
+  }
+}
 
 -- WhichKey
 lvim.builtin.which_key.mappings["D"] = { "<cmd>DBUIToggle<CR>", "Database Explorer" }
@@ -24,6 +61,10 @@ lvim.builtin.which_key.mappings["x"] = {
   l = { "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore last session" },
   Q = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
 }
+lvim.builtin.which_key.mappings["bo"] = {
+  "<Cmd>BufferLineCloseLeft<CR><Cmd>BufferLineCloseRight<CR>", "Close all other buffers",
+}
+
 
 -- Trouble
 -- TODO: Add Trouble keymappings
@@ -70,9 +111,6 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 -- Alpha
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-
--- Notify
-lvim.builtin.notify.active = true
 
 -- LuaLine
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
@@ -121,6 +159,17 @@ lvim.autocommands = {
   --     command = "lua require(\"persistence\").load({last = true})"
   --   }
   -- }
+  {
+    "InsertEnter", {
+      command = "set norelativenumber"
+    },
+  },
+  {
+    "InsertLeave", {
+      command = "set relativenumber"
+    },
+  },
+
 }
 
 -- PLUGINS --
@@ -252,26 +301,15 @@ lvim.plugins = {
     config = function()
       vim.defer_fn(function()
         require("copilot").setup {
-          panel = {
-            enabled = true,
-            auto_refresh = true,
-            keymap = {
-              jump_prev = "[[",
-              jump_next = "]]",
-              accept = "<CR>",
-              refresh = "gr",
-              open = "<M-CR>"
-            },
-          },
           suggestion = {
             enabled = true,
             auto_trigger = true,
             debounce = 75,
             keymap = {
-              accept = "<M-l>",
-              next = "<M-]>",
-              prev = "<M-[>",
-              dismiss = "<C-]>",
+              accept = "<C-CR>",
+              next = "<C-]>",
+              prev = "<C-[>",
+              dismiss = "<C-\\>",
             },
           },
           plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
@@ -281,6 +319,16 @@ lvim.plugins = {
   },
   { "zbirenbaum/copilot-cmp",
     after = { "copilot.lua", "nvim-cmp" },
+    config = function()
+      require("copilot_cmp").setup({
+        method = "getCompletionsCycling",
+        formatters = {
+          label = require("copilot_cmp.format").format_label_text,
+          insert_text = require("copilot_cmp.format").format_insert_text,
+          preview = require("copilot_cmp.format").deindent,
+        },
+      })
+    end
   },
   {
     "ray-x/lsp_signature.nvim",
