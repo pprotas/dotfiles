@@ -63,7 +63,7 @@ lvim.builtin.which_key.mappings["lq"] = { "<Cmd>TroubleToggle document_diagnosti
 lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<Cmd>TroubleToggle lsp_references<Cr>", "References" }
 
 -- ToDo
--- TODO: Add ToDo keymappings
+lvim.builtin.which_key.mappings["lt"] = { "<Cmd>TodoTrouble<Cr>", "Todo" }
 
 -- ZenMode
 -- TODO: Add ZenMode keymap
