@@ -9,23 +9,16 @@ vim.opt.showbreak = "↪ "
 lvim.colorscheme = "onedarker"
 
 -- KEYMAPPINGS --
--- Disable unwanted standard keymaps
-lvim.builtin.which_key.mappings["/"] = nil
-lvim.builtin.which_key.vmappings["/"] = nil
-lvim.builtin.which_key.mappings["g"].k = nil
-lvim.builtin.which_key.mappings["g"].d = nil
-lvim.builtin.which_key.mappings["g"].j = nil
-lvim.builtin.which_key.mappings["g"].R = nil
-lvim.builtin.which_key.mappings["g"].r = nil
-lvim.builtin.which_key.mappings["g"].u = nil
-lvim.builtin.which_key.mappings["g"].s = nil
-lvim.builtin.which_key.mappings["g"].p = nil
-
-lvim.leader = "space"
+-- Movement on wrapped lines
 lvim.keys.normal_mode["j"] = "gj"
 lvim.keys.normal_mode["k"] = "gk"
 lvim.keys.visual_mode["j"] = "gj"
 lvim.keys.visual_mode["k"] = "gk"
+
+-- Buffer manipulation
+lvim.builtin.which_key.mappings["bo"] = {
+  "<Cmd>BufferLineCloseLeft<CR><Cmd>BufferLineCloseRight<CR>", "Close all other buffers",
+}
 
 -- Emacs keybinds in INSERT mode
 lvim.keys.insert_mode["<C-a>"] = "<Home>"
@@ -40,7 +33,6 @@ lvim.keys.insert_mode["<C-CR>"] = "<Cmd>lua require(\"copilot.suggestion\").acce
 lvim.keys.insert_mode["<C-\\>"] = "<Cmd>lua require(\"copilot.suggestion\").dismiss()<CR>"
 
 -- Use fugitive Git blame
-lvim.keys.normal_mode["<Leader>gl"] = "<Cmd>Git blame<CR>"
 lvim.builtin.which_key.mappings["gl"] = { "<Cmd>Git blame<CR>", "Blame" }
 
 -- DAPUI
@@ -53,23 +45,22 @@ lvim.builtin.which_key.vmappings["d"] = {
   }
 }
 
--- WhichKey
+-- DBUI
 lvim.builtin.which_key.mappings["D"] = { "<cmd>DBUIToggle<CR>", "Database Explorer" }
+
+-- Persistentence
 lvim.builtin.which_key.mappings["x"] = {
   name = "Session",
   c = { "<cmd>lua require('persistence').load()<cr>", "Restore last session for current dir" },
   l = { "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore last session" },
   Q = { "<cmd>lua require('persistence').stop()<cr>", "Quit without saving session" },
 }
-lvim.builtin.which_key.mappings["bo"] = {
-  "<Cmd>BufferLineCloseLeft<CR><Cmd>BufferLineCloseRight<CR>", "Close all other buffers",
-}
-
 
 -- Trouble
--- TODO: Add Trouble keymappings
 -- Replace quickfix diagnostics with Trouble
+lvim.builtin.which_key.mappings["lq"] = { "<Cmd>TroubleToggle document_diagnostics<Cr>", "Quickfix" }
 -- Replace quickfix window find references with Trouble
+lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<Cmd>TroubleToggle lsp_references<Cr>", "References" }
 
 -- ToDo
 -- TODO: Add ToDo keymappings
@@ -254,7 +245,10 @@ lvim.plugins = {
   },
   {
     "folke/trouble.nvim",
-    cmd = "TroubleToggle",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup()
+    end
   },
   {
     "folke/twilight.nvim"
@@ -307,8 +301,8 @@ lvim.plugins = {
             debounce = 75,
             keymap = {
               accept = "<C-CR>",
-              next = "<C-]>",
-              prev = "<C-[>",
+              next = "<M-]>",
+              prev = "<M-[>",
               dismiss = "<C-\\>",
             },
           },
