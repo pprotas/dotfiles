@@ -66,7 +66,7 @@ lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<Cmd>TroubleToggle lsp_reference
 lvim.builtin.which_key.mappings["lt"] = { "<Cmd>TodoTrouble<Cr>", "Todo" }
 
 -- ZenMode
--- TODO: Add ZenMode keymap
+lvim.builtin.which_key.mappings["z"] = { "<Cmd>ZenMode<Cr>", "Zen" }
 
 -- PLUGINS --
 -- Terminal
