@@ -33,7 +33,7 @@ brew install zsh-vi-mode
 # Symlink source-controlled dotfiles to home directory
 dir=~/dotfiles
 olddir=~/dotfiles_old            
-files="config/nvim/init.vim config/lvim/config.lua gitconfig gitignore_global hushlogin ideavimrc tmux.conf vimrc zshrc zshrc-linux zshrc-mac"    r
+files="config/nvim/init.vim config/lvim/config.lua config/helix/config.toml gitconfig gitignore_global hushlogin ideavimrc tmux.conf vimrc zshrc zshrc-linux zshrc-mac"    
 
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
