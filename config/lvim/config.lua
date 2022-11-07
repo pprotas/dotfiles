@@ -174,7 +174,6 @@ lvim.autocommands = {
       command = "set relativenumber"
     },
   },
-
 }
 
 -- PLUGINS --
