@@ -123,6 +123,11 @@ lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.rainbow.enable = true
 
+require('nvim-treesitter.configs').setup {
+  endwise = {
+    enable = true,
+  },
+}
 -- LSP --
 -- Formatters
 local formatters = require "lvim.lsp.null-ls.formatters"
@@ -183,7 +188,9 @@ lvim.plugins = {
       vim.g.matchup_matchparen_offscreen = { method = "popup" }
     end,
   },
-
+  {
+    "RRethy/nvim-treesitter-endwise"
+  },
   -- Buffer navigation
   {
     "nacro90/numb.nvim",
