@@ -33,7 +33,7 @@ lvim.keys.insert_mode["<C-CR>"] = "<Cmd>lua require(\"copilot.suggestion\").acce
 lvim.keys.insert_mode["<C-\\>"] = "<Cmd>lua require(\"copilot.suggestion\").dismiss()<CR>"
 
 -- Use fugitive Git blame
-lvim.builtin.which_key.mappings["gl"] = { "<Cmd>Git blame<CR>", "Blame" }
+lvim.builtin.which_key.mappings["g"].l = { "<Cmd>Git blame<CR>", "Blame" }
 
 -- DAPUI
 lvim.builtin.which_key.mappings["de"] = { "Cmdlua require(\"dapui\").eval()<CR>", "Evaluate Statement" }
