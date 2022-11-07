@@ -132,6 +132,11 @@ require('nvim-treesitter.configs').setup {
 -- Telescope
 lvim.builtin.telescope.pickers.find_files.previewer = nil
 lvim.builtin.telescope.pickers.git_files.previewer = nil
+
+-- Whichkey
+lvim.builtin.which_key.setup.plugins.marks = true
+lvim.builtin.which_key.setup.plugins.registers = true
+
 -- LSP --
 -- Formatters
 local formatters = require "lvim.lsp.null-ls.formatters"
