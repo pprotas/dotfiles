@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# Manage layout by default
+yabai -m config layout bsp
+
+# Focus on mouse hover
+# yabai -m config focus_follows_mouse autoraise
+
+# Inactive windows are transparent
+# yabai -m config window_opacity on
+# yabai -m config active_window_opacity 1.0
+# yabai -m config normal_window_opacity 0.9
+
+# Padding
+yabai -m config top_padding    15
+yabai -m config bottom_padding 15
+yabai -m config left_padding   15
+yabai -m config right_padding  15
+yabai -m config window_gap     15
+
+# Floating windows always on top
+yabai -m config window_topmost on
+
+# Only floating windows have shadows
+yabai -m config window_shadow float
+
+# Disable managing
+yabai -m rule --add app="^System Settings$" manage=off
