@@ -8,32 +8,23 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Install Starship
+# Install Homebrew packages
 brew install starship
-
-# Install FiraCode Nerd Font
 brew tap homebrew/cask-fonts
 brew install --cask font-fira-code-nerd-font
-
-# Install NeoVim
 brew install --HEAD neovim
-
-# Install LunarVim
 LV_BRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
-
-# Install tmux
 brew install tmux
-
-# Install rbenv
 brew install rbenv ruby-build
-
-# Install zsh-vi-mode
-brew install zsh-vi-mode
+brew install yabai
+brew install skhd
+brew install lazygit
+brew install lazydocker
 
 # Symlink source-controlled dotfiles to home directory
 dir=~/dotfiles
 olddir=~/dotfiles_old            
-files="config/nvim/init.vim config/lvim/config.lua config/helix/config.toml gitconfig gitignore_global hushlogin ideavimrc tmux.conf vimrc zshrc zshrc-linux zshrc-mac"    
+files="config/nvim/init.vim config/lvim/config.lua config/helix/config.toml config/yabai/yabairc config/skhd/skhdrc gitconfig gitignore_global hushlogin ideavimrc tmux.conf vimrc zshrc zshrc-linux zshrc-mac"    
 
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
