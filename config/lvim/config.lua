@@ -6,7 +6,7 @@ vim.opt.wrap = true
 vim.opt.showbreak = "↪ "
 
 -- APPEARANCE --
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "catppuccin-frappe"
 
 -- KEYMAPPINGS --
 -- Movement on wrapped lines
@@ -404,6 +404,10 @@ lvim.plugins = {
       }
     end
   },
+  -- Themes
+  {
+    'catppuccin/nvim', as = 'catppuccin'
+  }
 }
 
 lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
