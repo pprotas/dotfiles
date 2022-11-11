@@ -18,6 +18,7 @@ brew install tmux
 brew install rbenv ruby-build
 brew install yabai
 brew install skhd
+brew install jq
 brew install lazygit
 brew install lazydocker
 
