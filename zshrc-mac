@@ -1,8 +1,5 @@
 #!/bin/zsh
 
-# iTerm2
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # Java
 #export 
 JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home"
