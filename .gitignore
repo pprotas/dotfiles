@@ -4,4 +4,5 @@ config/lvim.old
 config/lvim/plugin
 config/lvim/ignore
 config/github-copilot
+config/lazygit/state.yml
 yarn
