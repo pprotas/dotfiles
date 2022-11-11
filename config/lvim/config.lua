@@ -15,6 +15,12 @@ lvim.keys.normal_mode["k"] = "gk"
 lvim.keys.visual_mode["j"] = "gj"
 lvim.keys.visual_mode["k"] = "gk"
 
+-- Resizing windows
+lvim.keys.normal_mode["<C-Down>"] = "<Cmd>lua require('tmux').resize_bottom()<CR>"
+lvim.keys.normal_mode["<C-Up>"] = "<Cmd>lua require('tmux').resize_top()<CR>"
+lvim.keys.normal_mode["<C-Left>"] = "<Cmd>lua require('tmux').resize_left()<CR>"
+lvim.keys.normal_mode["<C-Right>"] = "<Cmd>lua require('tmux').resize_right()<CR>"
+
 -- Buffer manipulation
 lvim.builtin.which_key.mappings["bo"] = {
   "<Cmd>BufferLineCloseLeft<CR><Cmd>BufferLineCloseRight<CR>", "Close all other buffers",
@@ -288,7 +294,7 @@ lvim.plugins = {
         },
         resize = {
           -- enables default keybindings (A-hjkl) for normal mode
-          enable_default_keybindings = true,
+          enable_default_keybindings = false
         },
         copy_sync = {
           enable = false
