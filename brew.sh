@@ -13,35 +13,7 @@ brew upgrade
 
 # Packages
 # ========
-brew install --cask obsidian
-brew install --cask rectangle-pro
-brew install --cask mission-control-plus
-brew install --cask topnotch
-brew install --cask dozer
-brew install --cask alt-tab
-brew install --cask monitorcontrol
-brew install --cask middle
-brew install --cask discretescroll
-brew install --cask spotify
-brew install --cask whatsapp
-brew install --cask 1password
-brew install --cask spaceid
-brew install --cask karabiner-elements
-brew install --cask iterm2
-brew install tmux
-brew install jq
-brew install lazygit
-brew install lazydocker
-brew install fzf
-brew install z
-brew install n
-brew install zsh-autosuggestions
-brew install zsh-syntax-highlighting
-brew install koekeishiya/formulae/yabai
-brew install koekeishiya/formulae/skhd
-brew install starship
-brew install neovim --HEAD
-brew install docker
+brew bundle
 
 # Services
 # ========
