@@ -8,12 +8,6 @@ function error {
     exit 2
 }
 
-# Check if oh-my-zsh is installed, and error out if it isn't.
-# This is necessary because oh-my-zsh messes up .zshrc
-if ! [[ -d ~/.oh-my-zsh ]]; then
-  error "Oh My Zsh is not installed. Please install it before running this script."
-fi
-
 # Set working dir
 cd ~/dotfiles/.files || error "No .files directory found"
 
