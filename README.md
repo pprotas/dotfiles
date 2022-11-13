@@ -24,9 +24,16 @@ cd ~/dotfiles && ./install.sh
 Let's discuss how all of this works under the hood.
 
 ### Structure
-The directory structure of this repository is as follows:
+The directory structure of the important files in this repository is as follows:
 ```bash
-# TODO: Put dir structure here
+.
+├── .files
+├── Brewfile
+├── brew.sh
+├── install.sh
+├── maco.sh
+├── osconfig.sh
+└── symlink.sh
 ```
 
 ### .files
