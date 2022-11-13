@@ -24,6 +24,7 @@ dotfiles=$(find "$dotfiles_dir" -depth 1)
 for file in $dotfiles; do
   new_file="${file#"$dotfiles_dir/"}"
   new_file="${new_file/#./${HOME}/.}"
+  echo "[symlink] INFO: Symlinking ${new_file} (home dir) to ${file} (dotfile)"
   ln -sfn "$file" "$new_file"
 done
 echo "[symlink] INFO: Installation finished"
