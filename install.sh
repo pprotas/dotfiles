@@ -5,8 +5,6 @@ echo "[install] INFO: Installation started"
 ~/dotfiles/maco.sh
 ~/dotfiles/symlink.sh
 
-sudo n install lts
-
 # Install oh-my-zsh if necessary
 if ! [[ -d ~/.oh-my-zsh ]]; then
   echo "[ohmyzsh] Installation started"
@@ -19,6 +17,7 @@ fi
 # Install LunarVim if necessary
 if ! lvim_loc="$(type -p lvim)" || [[ -z "$lvim_loc" ]]; then
   export PATH="/opt/homebrew/bin:$PATH"
+  sudo n install lts
   bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) "" --yes --install-dependencies
   mv ~/.config/lvim.old/config.lua ~/.config/lvim
   rm -rf ~/.config/lvim.old
