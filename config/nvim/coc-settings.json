@@ -1,8 +1,0 @@
-{
-  "codeLens.enable": true,
-  "java.referencesCodeLens.enabled": true,
-  "javascript.suggest.autoImports": true,
-  "typescript.suggest.autoImports": true,
-  "java.errors.incompleteClasspath.severity": "info",
-  "java.home": "/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home"
-}

@@ -1,8 +1,7 @@
-config/iterm2/AppSupport
-config/nvim/session
-config/lvim.old
-config/lvim/plugin
-config/lvim/ignore
-config/github-copilot
-config/lazygit/state.yml
-yarn
+.files/.config/iterm2/AppSupport
+.files/.config/nvim/session
+.files/.config/lvim.old
+.files/.config/lvim/plugin
+.files/.config/lvim/ignore
+.files/.config/github-copilot
+.files/.config/lazygit/state.yml
