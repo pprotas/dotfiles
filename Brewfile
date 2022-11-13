@@ -1,4 +1,4 @@
-tap "koekeishiya/formulae/"
+tap "koekeishiya/formulae"
 
 cask "obsidian"
 cask "rectangle-pro"
