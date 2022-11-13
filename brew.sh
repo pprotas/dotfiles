@@ -22,5 +22,3 @@ brew bundle
 brew services start yabai
 brew services start skhd
 echo "[brew] INFO: Installation finished"
-echo "[brew] INFO: Optional/manual next steps:"
-echo " - Set up the necessary license keys or credentials for the installed applications"

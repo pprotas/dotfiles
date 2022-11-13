@@ -124,7 +124,3 @@ defaults write com.google.Chrome DisablePrintPreview -bool true
 defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 
 echo "[osconfig] INFO: Installation finished"
-echo "[osconfig] INFO: Optional/manual next steps:"
-echo " - Organise the dock & menu bar"
-echo " - Change wallpaper"
-echo " - Use TouchID for sudo: https://azimi.io/how-to-enable-touch-id-for-sudo-on-macbook-pro-46272ac3e2df"
