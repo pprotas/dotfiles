@@ -18,7 +18,7 @@ cd ~/dotfiles/.files || error "No .files directory found"
 
 # Get all the necessary dotfiles
 dotfiles_dir="${HOME}/dotfiles/.files"
-dotfiles=$( find "$dotfiles_dir" -depth 1 -not -path "${dotfiles_dir}/.files/.config" && find "$dotfiles_dir" -depth 2)
+dotfiles=$(find "$dotfiles_dir" -depth 1)
 
 echo "Symlinking dotfiles..."
 for file in $dotfiles; do
@@ -26,3 +26,4 @@ for file in $dotfiles; do
   new_file="${new_file/#./${HOME}/.}"
   ln -sf "$file" "$new_file"
 done
+echo "Done!"
