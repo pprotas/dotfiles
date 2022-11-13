@@ -6,8 +6,6 @@ export ZSH="${HOME}/.oh-my-zsh"
 DISABLE_UPDATE_PROMPT="true"
 ENABLE_CORRECTION="true"
 
-plugins=(zsh-autosuggestions zsh-syntax-highlighting)
-
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
@@ -44,3 +42,6 @@ eval "$(rbenv init - zsh)"
 
 # H1
 export HACKERONE_ON_DOCKER=true
+
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
