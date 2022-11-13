@@ -1,4 +1,5 @@
 tap "koekeishiya/formulae"
+tap "homebrew/cask-fonts"
 
 cask "karabiner-elements"
 cask "obsidian"
@@ -15,6 +16,7 @@ cask "whatsapp"
 cask "1password"
 cask "spaceid"
 cask "iterm2"
+cosk "font-fira-code-nerd-font"
 
 brew "tmux"
 brew "neovim", args: ['HEAD']
