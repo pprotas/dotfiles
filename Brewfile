@@ -1,5 +1,6 @@
 tap "koekeishiya/formulae"
 
+cask "karabiner-elements"
 cask "obsidian"
 cask "rectangle-pro"
 cask "mission-control-plus"
@@ -13,7 +14,6 @@ cask "spotify"
 cask "whatsapp"
 cask "1password"
 cask "spaceid"
-cask "karabiner-elements"
 cask "iterm2"
 
 brew "tmux"
