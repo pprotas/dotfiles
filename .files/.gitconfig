@@ -1,0 +1,10 @@
+[user]
+	name = Pawel Protas
+	email = pawel@hackerone.com
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+[credential]
+	helper = osxkeychain
+[init]
+	defaultBranch = main

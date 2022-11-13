@@ -1,0 +1,38 @@
+source ~/.config/nvim/init.vim
+
+"" FORMATTING
+map <leader>f <Action>(ReformatCode)
+map <leader>p <Action>(ReformatWithPrettierAction)
+
+"" CODE ACTIONS
+map K <Action>(QuickJavaDoc)
+map fu <Action>(FindUsages)
+map fd <Action>(GotoDeclaration)
+map / <Action>(Find)
+
+"" REFACTORING
+map + <Action>(EditorSelectWord)
+map _ <Action>(EditorUnSelectWord)
+
+"" DIAGNOSTICS
+map [g <Action>(GotoPreviousError)
+map ]g <Action>(GotoNextError)
+
+"" DEBUGGING
+nmap ybb <Action>(ToggleLineBreakpoint)
+
+"" WINDOW MANAGEMENT
+map <C-W>c <Action>(CloseAllEditors)
+map <C-W>o <Action>(HideAllWindows)
+nmap yz <Action>(ToggleDistractionFreeMode)
+map <C-H> <Action>(PrevSplitter)
+map <C-L> <Action>(NextSplitter)
+
+"" PLUGIN CONFIGURATION
+set idearefactormode=keep
+set ideavimsupport=[dialog, singleline]
+set NERDTree
+set ideajoin
+set commentary
+set ideamarks
+set surround

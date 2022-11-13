@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+# Change default config home
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# IDE settings
+alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+export LANG=en_US.UTF-8 # For some reason IntelliJ terminal displays ghost characters without this
+
+# LunarVim
+export PATH=$PATH:$HOME/.local/bin
+
+fpath=($fpath "${HOME}/.zfunctions") # No idea what this does
