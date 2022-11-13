@@ -16,7 +16,7 @@ cask "whatsapp"
 cask "1password"
 cask "spaceid"
 cask "iterm2"
-cosk "font-fira-code-nerd-font"
+cask "font-fira-code-nerd-font"
 
 brew "tmux"
 brew "neovim", args: ['HEAD']
