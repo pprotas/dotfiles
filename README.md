@@ -44,6 +44,8 @@ This is the main install script. It's purpose is to kick off other scripts that 
 - symlink.sh
 - maco.sh
 
+It also installs some non-Homebrew binaries.
+
 ### symlink.sh
 This dotfiles repository uses a symlinking strategy to install the dotfiles in the home directory. This has multiple advantages:
 - The git repository is located in `~/dotfiles` instead of `~`

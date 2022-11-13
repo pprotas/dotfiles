@@ -13,4 +13,9 @@ fi
 ~/dotfiles/symlink.sh
 ~/dotfiles/maco.sh
 
+# Install LunarVim if necessary
+if ! lvim_loc="$(type -p lvim)" || [[ -z "$lvim_loc" ]]; then
+  bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+fi
+
 echo "[install] INFO: Installation finished"
