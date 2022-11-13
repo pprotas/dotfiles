@@ -1,9 +1,10 @@
 #!/bin/bash
 # Symlinks the .files directory to the home directory
+echo "[symlink] INFO: Installation started"
 
 # Method to handle errors
 function error {
-    echo "ERROR: $1" >&2
+    echo "[symlink] ERROR: $1" >&2
     exit 2
 }
 
@@ -20,10 +21,9 @@ cd ~/dotfiles/.files || error "No .files directory found"
 dotfiles_dir="${HOME}/dotfiles/.files"
 dotfiles=$(find "$dotfiles_dir" -depth 1)
 
-echo "Symlinking dotfiles..."
 for file in $dotfiles; do
   new_file="${file#"$dotfiles_dir/"}"
   new_file="${new_file/#./${HOME}/.}"
   ln -sf "$file" "$new_file"
 done
-echo "Done!"
+echo "[symlink] INFO: Installation finished"
