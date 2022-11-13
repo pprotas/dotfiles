@@ -5,3 +5,4 @@
 .files/.config/lvim/ignore
 .files/.config/github-copilot
 .files/.config/lazygit/state.yml
+.files/.config/tmux/plugins
