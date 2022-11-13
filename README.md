@@ -7,11 +7,12 @@ Although he main goal of this repository is to make setting up a new machine as 
 ### Requirements
 - Git
 - Zsh
+- `xcode-select --install` (macOS will prompt you for this anyways)
 
 ### Set-up
 Clone this repository to your home directory:
 ```bash
-cd ~ && git clone git@github.com:pprotas/dotfiles.git
+cd ~ && git clone https://github.com/pprotas/dotfiles.git
 ```
 
 ### Install
