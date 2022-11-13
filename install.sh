@@ -3,6 +3,7 @@
 echo "[install] INFO: Installation started"
 
 ~/dotfiles/maco.sh
+~/dotfiles/symlink.sh
 
 sudo n install lts
 
@@ -17,9 +18,10 @@ fi
 
 # Install LunarVim if necessary
 if ! lvim_loc="$(type -p lvim)" || [[ -z "$lvim_loc" ]]; then
-  zsh $(bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) "" --yes --install-dependencies)
+  zsh -c 'bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) "" --yes --install-dependencies'
+  mv ~/.config/lvim.old/config.lua ~/.config/lvim
+  rm -rf ~/.config/lvim.old
 fi
 
-~/dotfiles/symlink.sh
 
 echo "[install] INFO: Installation finished"
