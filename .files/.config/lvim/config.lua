@@ -6,7 +6,7 @@ vim.opt.wrap = true
 vim.opt.showbreak = "↪ "
 
 -- APPEARANCE --
-lvim.colorscheme = "catppuccin-frappe"
+lvim.colorscheme = "onedark"
 
 -- KEYMAPPINGS --
 -- Movement on wrapped lines
@@ -408,7 +408,7 @@ lvim.plugins = {
   },
   -- Themes
   {
-    'catppuccin/nvim', as = 'catppuccin'
+    'joshdick/onedark.vim'
   }
 }
 
