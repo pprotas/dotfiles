@@ -154,6 +154,7 @@ lvim.builtin.which_key.setup.plugins.marks = true
 lvim.builtin.which_key.setup.plugins.registers = true
 
 -- LSP --
+lvim.lsp.diagnostics.virtual_text = false
 -- Formatters
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
@@ -358,10 +359,17 @@ lvim.plugins = {
       })
     end
   },
+  -- LSP --
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
     config = function() require "lsp_signature".on_attach() end,
+  },
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").setup()
+    end,
   },
   -- QOL --
   {
