@@ -192,9 +192,6 @@ lvim.autocommands = {
 lvim.plugins = {
   -- Git
   {
-    "f-person/git-blame.nvim",
-  },
-  {
     "tpope/vim-fugitive"
   },
   -- Text editing
