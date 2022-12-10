@@ -175,11 +175,6 @@ linters.setup {
 
 -- AUTOCOMMANDS --
 lvim.autocommands = {
-  -- {
-  --   "VimEnter", {
-  --     command = "lua require(\"persistence\").load({last = true})"
-  --   }
-  -- }
   {
     "InsertEnter", {
       command = "set norelativenumber"
@@ -386,7 +381,6 @@ lvim.plugins = {
     "felipec/vim-sanegx",
     event = "BufRead",
   },
-
   -- Database
   {
     "tpope/vim-dadbod"
@@ -425,7 +419,7 @@ lvim.plugins = {
   -- Themes
   {
     'joshdick/onedark.vim'
-  }
+  },
 }
 
 lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
