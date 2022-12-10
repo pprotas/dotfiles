@@ -15,6 +15,12 @@ lvim.keys.normal_mode["k"] = "gk"
 lvim.keys.visual_mode["j"] = "gj"
 lvim.keys.visual_mode["k"] = "gk"
 
+-- Centering screen on some commands that move the cursor
+lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
+lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
+lvim.keys.normal_mode["n"] = "nzz"
+lvim.keys.normal_mode["N"] = "Nzz"
+
 -- Resizing windows
 lvim.keys.normal_mode["<C-Down>"] = "<Cmd>lua require('tmux').resize_bottom()<CR>"
 lvim.keys.normal_mode["<C-Up>"] = "<Cmd>lua require('tmux').resize_top()<CR>"
