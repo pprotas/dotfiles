@@ -198,7 +198,7 @@ lvim.plugins = {
   },
   -- Text editing
   {
-    "tpope/vim-surround",
+    "kylechui/nvim-surround",
   },
   {
     "andymass/vim-matchup",
