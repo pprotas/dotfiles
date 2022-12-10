@@ -32,6 +32,11 @@ lvim.builtin.which_key.mappings["bo"] = {
   "<Cmd>BufferLineCloseLeft<CR><Cmd>BufferLineCloseRight<CR>", "Close all other buffers",
 }
 
+-- Search/Replace
+lvim.builtin.which_key.mappings["ss"] = {
+  "<Cmd>lua require('spectre').open()<CR>", "Spectre",
+}
+
 -- Emacs keybinds in INSERT mode
 lvim.keys.insert_mode["<C-a>"] = "<Home>"
 lvim.keys.insert_mode["<C-b>"] = "<Left>"
@@ -279,6 +284,11 @@ lvim.plugins = {
   {
     "folke/twilight.nvim"
   },
+  -- Search/Replace
+  {
+    'windwp/nvim-spectre',
+  },
+  requires = "nvim-lua/plenary.nvim",
   -- Window management --
   {
     "folke/zen-mode.nvim",
