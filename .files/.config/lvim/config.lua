@@ -6,7 +6,7 @@ vim.opt.wrap = true
 vim.opt.showbreak = "↪ "
 
 -- APPEARANCE --
-lvim.colorscheme = "onedark"
+lvim.colorscheme = "oxocarbon"
 
 -- KEYMAPPINGS --
 -- Movement on wrapped lines
@@ -418,7 +418,7 @@ lvim.plugins = {
   },
   -- Themes
   {
-    'joshdick/onedark.vim'
+    'nyoom-engineering/oxocarbon.nvim'
   },
 }
 
