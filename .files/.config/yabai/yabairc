@@ -24,9 +24,8 @@ yabai -m config window_shadow float
 # Disable managing
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Karabiner(.*)$" manage=off
-
-applications="(Mail|Reminders|Messages|Slack|Chrome|Preview|Spotify)"
-yabai -m rule --add app="^${applications}$" manage=on layer=below
-
 yabai -m rule --add app="^iTerm2$" title="^Preferences$" manage=off
-yabai -m rule --add app="^Google Chrome$" title="^Activate Security Key$" manage=off
+yabai -m rule --add app="^Google Chrome$" title="^Activate Security Key(.*)$" manage=off
+yabai -m rule --add app="^Arc$" title="^Picture in Picture$" manage=off
+yabai -m rule --add app="^Mail$" title!="^Inbox(.*)$" manage=off
+
