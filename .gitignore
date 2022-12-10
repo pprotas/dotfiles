@@ -6,3 +6,5 @@
 .files/.config/github-copilot
 .files/.config/lazygit/state.yml
 .files/.config/tmux/plugins
+.files/.config/irb
+.files/.config/karabiner/automatic_backups
