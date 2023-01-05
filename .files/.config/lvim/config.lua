@@ -280,8 +280,8 @@ lvim.plugins = {
   -- Search/Replace
   {
     'windwp/nvim-spectre',
+    requires = "nvim-lua/plenary.nvim",
   },
-  requires = "nvim-lua/plenary.nvim",
   -- Window management --
   {
     "folke/zen-mode.nvim",
