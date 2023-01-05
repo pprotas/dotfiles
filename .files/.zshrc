@@ -6,6 +6,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 DISABLE_UPDATE_PROMPT="true"
 ENABLE_CORRECTION="true"
 
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
