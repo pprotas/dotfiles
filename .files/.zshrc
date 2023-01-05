@@ -38,8 +38,6 @@ export FZF_CTRL_T_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{**/node_mod
 # z
 . /opt/homebrew/etc/profile.d/z.sh
 
-# Ruby
-eval "$(rbenv init - zsh)"
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
