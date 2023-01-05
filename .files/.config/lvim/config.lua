@@ -6,7 +6,7 @@ vim.opt.wrap = true
 vim.opt.showbreak = "↪ "
 
 -- APPEARANCE --
-lvim.colorscheme = "oxocarbon"
+lvim.colorscheme = "onedarker"
 
 -- KEYMAPPINGS --
 -- Movement on wrapped lines
@@ -405,10 +405,6 @@ lvim.plugins = {
     config = function()
       require("treesitter-context").setup()
     end
-  },
-  -- Themes
-  {
-    'nyoom-engineering/oxocarbon.nvim'
   },
 }
 
