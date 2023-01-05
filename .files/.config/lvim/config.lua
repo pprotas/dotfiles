@@ -211,6 +211,8 @@ lvim.plugins = {
     config = function()
       vim.g.matchup_matchparen_offscreen = { method = "popup" }
     end,
+      require("nvim-surround").setup()
+    end
   },
   {
     "RRethy/nvim-treesitter-endwise"
