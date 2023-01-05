@@ -1,6 +1,6 @@
 -- GENERAL --
 lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save = { enabled = true, timeout = 5000 }
 vim.opt.relativenumber = true
 vim.opt.wrap = true
 vim.opt.showbreak = "↪ "
@@ -9,6 +9,13 @@ vim.opt.showbreak = "↪ "
 lvim.colorscheme = "onedarker"
 
 -- KEYMAPPINGS --
+-- Longer timeout for formatting
+lvim.builtin.which_key.mappings["l"]["f"] = {
+  function()
+    require("lvim.lsp.utils").format { timeout_ms = 5000 }
+  end,
+  "Format",
+}
 -- Movement on wrapped lines
 lvim.keys.normal_mode["j"] = "gj"
 lvim.keys.normal_mode["k"] = "gk"
