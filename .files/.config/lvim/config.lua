@@ -204,13 +204,7 @@ lvim.plugins = {
   -- Text editing
   {
     "kylechui/nvim-surround",
-  },
-  {
-    "andymass/vim-matchup",
-    event = "CursorMoved",
     config = function()
-      vim.g.matchup_matchparen_offscreen = { method = "popup" }
-    end,
       require("nvim-surround").setup()
     end
   },
@@ -282,9 +276,6 @@ lvim.plugins = {
     config = function()
       require("trouble").setup()
     end
-  },
-  {
-    "folke/twilight.nvim"
   },
   -- Search/Replace
   {
