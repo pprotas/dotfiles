@@ -18,6 +18,10 @@ cask "spaceid"
 cask "iterm2"
 cask "font-fira-code-nerd-font"
 
+brew "coreutils"
+brew "curl"
+brew "git"
+brew "asdf"
 brew "tmux"
 brew "neovim", args: ['HEAD']
 brew "jq"

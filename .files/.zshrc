@@ -40,6 +40,8 @@ export FZF_CTRL_T_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{**/node_mod
 
 # Ruby
 eval "$(rbenv init - zsh)"
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # H1
 export HACKERONE_ON_DOCKER=true
