@@ -10,11 +10,11 @@ FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias vim='lvim'
+alias vim='nvim'
 alias sudo='sudo '
 
 # General shell exports
-export EDITOR=lvim 
+export EDITOR=nvim 
 export PATH="$HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Load correct .zshrc-* based on system OS
