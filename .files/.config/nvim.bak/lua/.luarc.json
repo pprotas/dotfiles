@@ -1,0 +1,29 @@
+{
+    "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+    "Lua.workspace.library": [
+        "/Users/pawel/.local/share/nvim/lazy/neodev.nvim/types/nightly",
+        "/opt/homebrew/Cellar/neovim/HEAD-cb9d68f/share/nvim/runtime",
+        "/Users/pawel/.local/share/nvim/lazy/cmp-path",
+        "/Users/pawel/.local/share/nvim/lazy/cmp-nvim-lua",
+        "/Users/pawel/.local/share/nvim/lazy/telescope.nvim",
+        "/Users/pawel/.local/share/nvim/lazy/nvim-lspconfig",
+        "/Users/pawel/.local/share/nvim/lazy/cmp-nvim-lsp",
+        "/Users/pawel/.local/share/nvim/lazy/plenary.nvim",
+        "/Users/pawel/.local/share/nvim/lazy/mason-lspconfig.nvim",
+        "/Users/pawel/.local/share/nvim/lazy/Onedarker.nvim",
+        "/Users/pawel/.local/share/nvim/lazy/lazy.nvim",
+        "/Users/pawel/.local/share/nvim/lazy/nvim-cmp",
+        "/Users/pawel/.local/share/nvim/lazy/neodev.nvim",
+        "/Users/pawel/.local/share/nvim/lazy/cmp_luasnip",
+        "/Users/pawel/.local/share/nvim/lazy/mason.nvim",
+        "/Users/pawel/.local/share/nvim/lazy/LuaSnip",
+        "/Users/pawel/.local/share/nvim/lazy/cmp-buffer",
+        "/Users/pawel/.local/share/nvim/lazy/nvim-treesitter",
+        "/Users/pawel/.local/share/nvim/lazy/null-ls.nvim",
+        "/Users/pawel/.local/share/nvim/lazy/lsp-zero.nvim",
+        "/Users/pawel/.local/share/nvim/lazy/fidget.nvim",
+        "/opt/homebrew/Cellar/neovim/HEAD-cb9d68f/share/nvim/runtime/lua",
+        "/Users/pawel/.config/nvim/lua",
+        "${3rd}/luassert/library"
+    ]
+}
