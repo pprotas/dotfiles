@@ -21,12 +21,11 @@ return {
       local null_ls = require("null-ls")
       return {
         sources = {
+          require("typescript.extensions.null-ls.code-actions"),
+
           null_ls.builtins.formatting.prettierd,
           null_ls.builtins.diagnostics.eslint_d,
           null_ls.builtins.code_actions.eslint_d,
-
-          null_ls.builtins.formatting.rubocop,
-          null_ls.builtins.diagnostics.rubocop,
 
           null_ls.builtins.formatting.stylua,
           null_ls.builtins.diagnostics.flake8,
