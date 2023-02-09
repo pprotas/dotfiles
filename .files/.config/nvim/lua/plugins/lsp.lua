@@ -3,7 +3,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       format = {
-        timeout_ms = 10000,
+        timeout_ms = 3000,
       },
     },
   },
@@ -27,8 +27,9 @@ return {
           null_ls.builtins.diagnostics.eslint_d,
           null_ls.builtins.code_actions.eslint_d,
 
+          null_ls.builtins.diagnostics.rubocop,
+
           null_ls.builtins.formatting.stylua,
-          null_ls.builtins.diagnostics.flake8,
 
           null_ls.builtins.code_actions.gitsigns,
         },
@@ -44,7 +45,7 @@ return {
           callback = function()
             vim.lsp.buf.format({
               bufnr = bufnr,
-              timeout_ms = 5000,
+              timeout_ms = 3000,
               filter = function(format_client)
                 return format_client.name ~= "tsserver"
               end,

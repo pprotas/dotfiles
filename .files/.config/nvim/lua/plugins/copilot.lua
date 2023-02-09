@@ -2,17 +2,22 @@ return {
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
-    event = "VimEnter",
+    event = "InsertEnter",
+    keys = {
+      {
+        "<C-CR>",
+        function()
+          require("copilot.suggestion").accept()
+        end,
+        desc = "Copilot Accept",
+        mode = "i",
+      },
+    },
     opts = {
       suggestion = {
         auto_trigger = true,
         keymap = {
-          accept = "<C-CR>",
-          accept_word = false,
-          accept_line = false,
-          next = false,
-          prev = false,
-          dismiss = false,
+          accept = false,
         },
       },
       panel = { enabled = false },

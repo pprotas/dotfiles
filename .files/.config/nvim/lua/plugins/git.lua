@@ -5,4 +5,7 @@ return {
       { "<leader>gb", "<Cmd>Git blame<CR>", desc = "Blame" },
     },
   },
+  {
+    "sindrets/diffview.nvim",
+  },
 }

@@ -7,7 +7,7 @@ return {
     config = true,
     keys = {
       {
-        "T",
+        "M",
         function()
           require("ts-node-action").node_action()
         end,
@@ -20,9 +20,6 @@ return {
     opts = {
       highlight = {
         enable = true,
-        additional_vim_regex_highlighting = {
-          -- "markdown"
-        },
       },
       context_commentstring = { enable = true, enable_autocmd = false },
       incremental_selection = {

@@ -1,8 +1,8 @@
 return {
   {
-    "davidgranstrom/nvim-markdown-preview",
+    "jakewvincent/mkdnflow.nvim",
   },
   {
-    "jakewvincent/mkdnflow.nvim",
+    "jghauser/auto-pandoc.nvim",
   },
 }
