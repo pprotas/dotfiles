@@ -3,7 +3,26 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       format = {
-        timeout_ms = 3000,
+        async = true,
+      },
+      setup = {
+        tsserver = function(_, opts)
+          require("lazyvim.util").on_attach(function(client, buffer)
+            if client.name == "tsserver" then
+              -- stylua: ignore
+              vim.keymap.set("n", "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", { buffer = buffer, desc = "Organize Imports" })
+              -- stylua: ignore
+              vim.keymap.set("n", "<leader>cR", "<cmd>TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
+
+              client.server_capabilities.documentFormattingProvider = false
+            end
+            if client.name == "eslint" then
+              client.server_capabilities.documentFormattingProvider = true
+            end
+          end)
+          require("typescript").setup({ server = opts })
+          return true
+        end,
       },
     },
   },
@@ -12,6 +31,7 @@ return {
     opts = {
       ensure_installed = {
         "solargraph",
+        "eslint-lsp",
       },
     },
   },
@@ -21,12 +41,6 @@ return {
       local null_ls = require("null-ls")
       return {
         sources = {
-          require("typescript.extensions.null-ls.code-actions"),
-
-          null_ls.builtins.formatting.prettierd,
-          null_ls.builtins.diagnostics.eslint_d,
-          null_ls.builtins.code_actions.eslint_d,
-
           null_ls.builtins.diagnostics.rubocop,
 
           null_ls.builtins.formatting.stylua,
@@ -34,25 +48,6 @@ return {
           null_ls.builtins.code_actions.gitsigns,
         },
       }
-    end,
-    on_attach = function(client, bufnr)
-      local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-      if client.supports_method("textDocument/formatting") then
-        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          group = augroup,
-          buffer = bufnr,
-          callback = function()
-            vim.lsp.buf.format({
-              bufnr = bufnr,
-              timeout_ms = 3000,
-              filter = function(format_client)
-                return format_client.name ~= "tsserver"
-              end,
-            })
-          end,
-        })
-      end
     end,
   },
 }
