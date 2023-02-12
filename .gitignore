@@ -9,3 +9,4 @@
 .files/.config/irb
 .files/.config/karabiner/automatic_backups
 .files/.config/grammarly*
+.files/.config/yarn/global/node_modules
