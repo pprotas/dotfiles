@@ -2,26 +2,21 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
-      format = {
-        async = true,
+      servers = {
+        tsserver = {
+          init_options = { preferences = { importModuleSpecifierPreference = "non-relative" } },
+        },
       },
       setup = {
-        tsserver = function(_, opts)
-          require("lazyvim.util").on_attach(function(client, buffer)
-            if client.name == "tsserver" then
-              -- stylua: ignore
-              vim.keymap.set("n", "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", { buffer = buffer, desc = "Organize Imports" })
-              -- stylua: ignore
-              vim.keymap.set("n", "<leader>cR", "<cmd>TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
-
-              client.server_capabilities.documentFormattingProvider = false
-            end
+        eslint = function(_, _)
+          require("lazyvim.util").on_attach(function(client, _)
             if client.name == "eslint" then
               client.server_capabilities.documentFormattingProvider = true
             end
+            if client.name == "tsserver" then
+              client.server_capabilities.documentFormattingProvider = false
+            end
           end)
-          require("typescript").setup({ server = opts })
-          return true
         end,
       },
     },
@@ -42,6 +37,10 @@ return {
       return {
         sources = {
           null_ls.builtins.diagnostics.rubocop,
+
+          null_ls.builtins.formatting.deno_fmt.with({
+            filetypes = { "markdown" },
+          }),
 
           null_ls.builtins.formatting.stylua,
 
