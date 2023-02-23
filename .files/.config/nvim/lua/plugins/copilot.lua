@@ -5,7 +5,7 @@ return {
     event = "InsertEnter",
     keys = {
       {
-        "<C-CR>",
+        "<C-F>",
         function()
           require("copilot.suggestion").accept()
         end,
