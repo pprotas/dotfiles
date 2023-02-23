@@ -30,16 +30,19 @@ esac
 # Load Starship
 eval "$(starship init zsh)"
 
+# FUCK
+eval $(thefuck --alias)
+
+# rtx
+eval "$(rtx activate zsh)"
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*}'"
 export FZF_CTRL_T_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*}'"
 
 # z
-. /opt/homebrew/etc/profile.d/z.sh
-
-# asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+eval "$(zoxide init zsh)"
 
 # H1
 export HACKERONE_ON_DOCKER=true
