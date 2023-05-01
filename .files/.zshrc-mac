@@ -10,4 +10,7 @@ export LANG=en_US.UTF-8 # For some reason IntelliJ terminal displays ghost chara
 # LunarVim
 export PATH=$PATH:$HOME/.local/bin
 
+export PATH="/opt/homebrew/opt/ruby@3.2/bin:$PATH"
+export PATH="/Users/pawel/.gem/ruby/3.2.0/bin/:$PATH"
+
 fpath=($fpath "${HOME}/.zfunctions") # No idea what this does
