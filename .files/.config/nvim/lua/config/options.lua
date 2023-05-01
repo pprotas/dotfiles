@@ -8,3 +8,7 @@ vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 
 vim.o.conceallevel = 0
+
+vim.diagnostic.config({
+  update_in_insert = false,
+})
