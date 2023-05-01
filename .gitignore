@@ -11,3 +11,4 @@
 .files/.config/grammarly*
 .files/.config/yarn/global/node_modules
 .files/.config/thefuck/__pycache__
+.files/.config/ngrok/ngrok.yml.*
