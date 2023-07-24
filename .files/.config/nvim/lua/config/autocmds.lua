@@ -18,13 +18,3 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   group = number_toggle,
   pattern = "*",
 })
-
-local pandoc = vim.api.nvim_create_augroup("Pandoc", { clear = true })
-
-vim.api.nvim_create_autocmd("BufWritePost", {
-  group = pandoc,
-  callback = function()
-    require("auto-pandoc").run_pandoc()
-  end,
-  pattern = "*.md",
-})
