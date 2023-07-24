@@ -1,4 +1,5 @@
 return {
+  "nvim-treesitter/playground",
   { "RRethy/nvim-treesitter-endwise" },
   { "windwp/nvim-ts-autotag" },
   { "romgrk/nvim-treesitter-context", config = true },

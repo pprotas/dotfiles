@@ -2,19 +2,53 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
+      inlay_hints = {
+        enabled = true,
+      },
       servers = {
         tsserver = {
+          disable_formatting = true,
           init_options = { preferences = { importModuleSpecifierPreference = "non-relative" } },
+          settings = {
+            javascript = {
+              inlayHints = {
+                includeInlayEnumMemberValueHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayVariableTypeHints = true,
+              },
+            },
+            typescript = {
+              inlayHints = {
+                includeInlayEnumMemberValueHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayVariableTypeHints = true,
+              },
+            },
+          },
+        },
+        lua_ls = {
+          settings = {
+            Lua = {
+              hint = {
+                enable = true,
+              },
+            },
+          },
         },
       },
       setup = {
-        eslint = function(_, _)
+        eslint = function()
           require("lazyvim.util").on_attach(function(client, _)
             if client.name == "eslint" then
               client.server_capabilities.documentFormattingProvider = true
-            end
-            if client.name == "tsserver" then
-              client.server_capabilities.documentFormattingProvider = false
             end
           end)
         end,
@@ -26,7 +60,13 @@ return {
     opts = {
       ensure_installed = {
         "solargraph",
+        "rubocop",
+        "htmlbeautifier",
         "eslint-lsp",
+        "tailwindcss-language-server",
+        "autopep8",
+        "pyright",
+        "prettierd",
       },
     },
   },
@@ -37,9 +77,17 @@ return {
       return {
         sources = {
           null_ls.builtins.diagnostics.rubocop,
+          null_ls.builtins.formatting.htmlbeautifier,
+
+          null_ls.builtins.formatting.autopep8,
+          null_ls.builtins.formatting.isort,
 
           null_ls.builtins.formatting.deno_fmt.with({
             filetypes = { "markdown" },
+          }),
+
+          null_ls.builtins.formatting.prettierd.with({
+            filetypes = { "graphql" },
           }),
 
           null_ls.builtins.formatting.stylua,
