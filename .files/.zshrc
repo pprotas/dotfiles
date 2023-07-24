@@ -1,13 +1,12 @@
 #!/bin/zsh
 
-# Oh My Zsh
-export ZSH="${HOME}/.oh-my-zsh"
-
-DISABLE_UPDATE_PROMPT="true"
-ENABLE_CORRECTION="true"
-
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-source $ZSH/oh-my-zsh.sh
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # Aliases
 alias vim='nvim'
@@ -27,8 +26,9 @@ case `uname` in
 	;;
 esac
 
-# Load Starship
-eval "$(starship init zsh)"
+# Load p10k
+source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # FUCK
 eval $(thefuck --alias)
