@@ -4,7 +4,11 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
+	attributesfile = ~/.gitattributes
 [credential]
 	helper = osxkeychain
 [init]
 	defaultBranch = main
+[merge "merge-structure-sql"]
+	name = Rails structure.sql merge driver
+	driver = git-merge-structure-sql %A %O %B
