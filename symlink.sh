@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Symlinks the .files directory to the home directory
 echo "[symlink] INFO: Installation started"
 
@@ -17,9 +18,12 @@ dotfiles=$(find "$dotfiles_dir" -depth 1)
 
 for file in $dotfiles; do
   new_file="${file#"$dotfiles_dir/"}"
-  new_file="${new_file/#./${HOME}/.}"
-  if [[ -d new_file ]]; then
+  new_file="${HOME}/.${new_file}"
+
+  if [[ -d $new_file ]]; then
     rm -rf "$new_file"
+  elif [[ -e $new_file ]]; then
+    rm -f "$new_file"
   fi 
 
   echo "[symlink] INFO: Symlinking ${new_file} (home dir) to ${file} (dotfile)"
