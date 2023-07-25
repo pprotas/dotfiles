@@ -14,6 +14,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 alias vim='nvim'
 alias sudo='sudo '
 alias ..='cd ..'
+alias ls="exa"
+alias cat="bat"
 
 # General shell exports
 export EDITOR=nvim 
@@ -36,7 +38,8 @@ eval "$(zoxide init zsh)"
 
 # H1
 export HACKERONE_ON_DOCKER=true
-
+# 1Password
+source /Users/pawel/.config/op/plugins.sh
 # Ruby stuff
 export PATH="$(brew --prefix)/opt/ruby@3.2/bin:$(brew --prefix)/opt/ruby@3.2/lib/ruby/gems/3.2.0/gems:$PATH"
 
