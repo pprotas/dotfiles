@@ -66,6 +66,7 @@ return {
         "autopep8",
         "pyright",
         "prettierd",
+        "misspell",
       },
     },
   },
@@ -92,6 +93,8 @@ return {
           null_ls.builtins.formatting.stylua,
 
           null_ls.builtins.code_actions.gitsigns,
+
+          null_ls.builtins.diagnostics.misspell,
         },
       }
     end,
