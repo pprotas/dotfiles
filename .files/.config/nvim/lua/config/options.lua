@@ -13,3 +13,5 @@ vim.o.conceallevel = 0
 vim.diagnostic.config({
   update_in_insert = false,
 })
+
+-- vim.lsp.set_log_level(vim.lsp.log_levels.DEBUG)
