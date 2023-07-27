@@ -7,7 +7,6 @@ return {
       },
       servers = {
         tsserver = {
-          disable_formatting = true,
           init_options = { preferences = { importModuleSpecifierPreference = "non-relative" } },
           settings = {
             javascript = {
@@ -47,8 +46,8 @@ return {
       setup = {
         eslint = function()
           require("lazyvim.util").on_attach(function(client, _)
-            if client.name == "eslint" then
-              client.server_capabilities.documentFormattingProvider = true
+            if client.name == "tsserver" then
+              client.server_capabilities.documentFormattingProvider = false
             end
           end)
         end,
