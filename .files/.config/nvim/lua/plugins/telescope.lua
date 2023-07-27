@@ -3,13 +3,13 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       {
-        "nvim-telescope/telescope-fzf-native.nvim",
+        "nvim-telescope/telescope-live-grep-args.nvim",
         config = function()
           require("telescope").load_extension("live_grep_args")
         end,
       },
       {
-        "nvim-telescope/telescope-live-grep-args.nvim",
+        "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
         config = function()
           require("telescope").load_extension("fzf")
@@ -35,6 +35,15 @@ return {
         buffers = {
           sort_mru = true,
         },
+      },
+    },
+    keys = {
+      {
+        "<leader>/",
+        function()
+          return require("telescope").extensions.live_grep_args.live_grep_args()
+        end,
+        desc = "Grep (root dir)",
       },
     },
   },
