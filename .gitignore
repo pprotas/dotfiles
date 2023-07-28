@@ -1,3 +1,5 @@
+node_modules
+
 .files/.config/iterm2/AppSupport
 .files/.config/nvim/session
 .files/.config/lvim.old
