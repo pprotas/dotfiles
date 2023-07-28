@@ -18,7 +18,7 @@ dotfiles=$(find "$dotfiles_dir" -depth 1)
 
 for file in $dotfiles; do
   new_file="${file#"$dotfiles_dir/"}"
-  new_file="${HOME}/.${new_file}"
+  new_file="${HOME}/${new_file}"
 
   if [[ -d $new_file ]]; then
     rm -rf "$new_file"
