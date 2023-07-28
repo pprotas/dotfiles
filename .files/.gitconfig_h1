@@ -1,6 +1,6 @@
 [user]
-	email = pawel@hackerone.com
+  email = pawel@hackerone.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF3WCvRB1/WEPHxyJANEFzvOM2M32/uijkisIR2pT6vl
 [merge "merge-structure-sql"]
-	name = Rails structure.sql merge driver
-	driver = git-merge-structure-sql %A %O %B
+  name = Rails structure.sql merge driver
+  driver = git-merge-structure-sql %A %O %B

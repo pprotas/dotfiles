@@ -18,3 +18,13 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   group = number_toggle,
   pattern = "*",
 })
+
+local gitconfig_filetype = vim.api.nvim_create_augroup("GitConfigFileType", { clear = true })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  callback = function()
+    vim.cmd("set filetype=gitconfig")
+  end,
+  group = gitconfig_filetype,
+  pattern = "*.gitconfig*",
+})
