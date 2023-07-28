@@ -62,11 +62,10 @@ return {
         "rubocop",
         "htmlbeautifier",
         "eslint-lsp",
-        "tailwindcss-language-server",
-        "autopep8",
-        "pyright",
         "prettierd",
         "misspell",
+        "autopep8",
+        "isort",
       },
     },
   },
@@ -79,6 +78,7 @@ return {
           null_ls.builtins.diagnostics.rubocop,
           null_ls.builtins.formatting.htmlbeautifier,
 
+          null_ls.builtins.formatting.ruff,
           null_ls.builtins.formatting.autopep8,
           null_ls.builtins.formatting.isort,
 
