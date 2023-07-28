@@ -64,8 +64,8 @@ return {
         "eslint-lsp",
         "prettierd",
         "misspell",
-        "autopep8",
-        "isort",
+        "black",
+        "taplo",
       },
     },
   },
@@ -78,9 +78,7 @@ return {
           null_ls.builtins.diagnostics.rubocop,
           null_ls.builtins.formatting.htmlbeautifier,
 
-          null_ls.builtins.formatting.ruff,
-          null_ls.builtins.formatting.autopep8,
-          null_ls.builtins.formatting.isort,
+          null_ls.builtins.formatting.black,
 
           null_ls.builtins.formatting.deno_fmt.with({
             filetypes = { "markdown" },
