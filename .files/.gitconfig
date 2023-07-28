@@ -1,16 +1,16 @@
 [user]
-	name = Pawel Protas
-	email = contact@pawelprotas.com
+  name = Pawel Protas
+  email = contact@pawelprotas.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII874qsVN3P+1Fjo28tOZOcJiMsDtNQZuXqdBzXMq6mC
 [core]
-	excludesfile = ~/.gitignore_global
-	autocrlf = input
-	attributesfile = ~/.gitattributes
+  excludesfile = ~/.gitignore_global
+  autocrlf = input
+  attributesfile = ~/.gitattributes
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [gpg]
   format = ssh
 [gpg "ssh"]
@@ -19,11 +19,12 @@
   gpgsign = true
 
 [merge]
-    tool = nvim
+  tool = nvim
 [mergetool "nvim"]
-    cmd = nvim -f -c \"DiffviewOpen\"
+  cmd = nvim -f -c \"DiffviewOpen\"
 [mergetool]
-    prompt = false
+  prompt = false
+  keepBackup = false
 [alias]
   mergetool = "!nvim -c DiffviewOpen"
   dt = "! args=$@; shift $#; nvim -c \"DiffviewOpen $args\""
