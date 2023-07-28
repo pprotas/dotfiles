@@ -1,6 +1,32 @@
 [user]
-	email = pawel@hackerone.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF3WCvRB1/WEPHxyJANEFzvOM2M32/uijkisIR2pT6vl
-[merge "merge-structure-sql"]
-	name = Rails structure.sql merge driver
-	driver = git-merge-structure-sql %A %O %B
+	name = Pawel Protas
+	email = contact@pawelprotas.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII874qsVN3P+1Fjo28tOZOcJiMsDtNQZuXqdBzXMq6mC
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+	attributesfile = ~/.gitattributes
+[init]
+	defaultBranch = main
+
+[credential]
+	helper = osxkeychain
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+  gpgsign = true
+
+[merge]
+    tool = nvim
+[mergetool "nvim"]
+    cmd = nvim -f -c \"DiffviewOpen\"
+[mergetool]
+    prompt = false
+[alias]
+  mergetool = "!nvim -c DiffviewOpen"
+  dt = "! args=$@; shift $#; nvim -c \"DiffviewOpen $args\""
+
+[includeIf "gitdir:~/Projects/h1/"]
+  path = ~/.gitconfig_h1
