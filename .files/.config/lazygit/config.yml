@@ -1,4 +1,12 @@
+# yaml-language-server: $schema=https://json.schemastore.org/lazygit.json
+
+os:
+  editPreset: "nvim"
+gui:
+  nerdFontsVersion: "3"
 keybinding:
   commits:
     moveDownCommit: '<c-n>'
     moveUpCommit: '<c-p>'
+services:
+  'gitlab.inverselink.com': 'gitlab:gitlab.inverselink.com'
