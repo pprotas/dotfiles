@@ -1,5 +1,5 @@
 [tools]
 go = "latest"
-node = "latest"
+node = "lts"
 python = "latest"
 ruby = "latest"
