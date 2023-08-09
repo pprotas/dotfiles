@@ -19,6 +19,7 @@ brew bundle
 
 # Services
 # ========
-brew services start yabai
-brew services start skhd
+yabai --start-service
+skhd --setart-service
+
 echo "[brew] INFO: Installation finished"
