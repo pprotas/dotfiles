@@ -1,10 +1,11 @@
 return {
   "kvrohit/rasmus.nvim",
   "rebelot/kanagawa.nvim",
+  "olimorris/onedarkpro.nvim",
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa",
+      colorscheme = "onedark_dark",
     },
   },
 }
