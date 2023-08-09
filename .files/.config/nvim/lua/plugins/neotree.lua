@@ -19,15 +19,6 @@ return {
           end,
         },
       },
-      keys = {
-        {
-          "<leader>fe",
-          function()
-            require("neo-tree.command").execute({ toggle = true }) -- Disable annoying neotree flicker when switching files too fast
-          end,
-          desc = "Explorer NeoTree (root dir)",
-        },
-      }
     },
   },
 }
