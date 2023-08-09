@@ -23,6 +23,14 @@ return {
             ["<C-b>"] = function(...)
               return require("telescope.actions").delete_buffer(...)
             end,
+            ["<C-q>"] = function(...)
+              require("telescope.actions").send_to_qflist(...)
+              return require("trouble").open("quickfix")
+            end,
+            ["<M-q>"] = function(...)
+              require("telescope.actions").send_selected_to_qflist(...)
+              return require("trouble").open("quickfix")
+            end,
           },
           n = {
             ["<C-b>"] = function(...)
