@@ -1,8 +1,8 @@
 return {
   {
-    "tpope/vim-fugitive",
+    "FabijanZulj/blame.nvim",
     keys = {
-      { "<leader>gb", "<Cmd>Git blame<CR>", desc = "Blame" },
+      { "<leader>gb", "<Cmd>ToggleBlame virtual<CR>", desc = "Blame" },
     },
   },
   {
