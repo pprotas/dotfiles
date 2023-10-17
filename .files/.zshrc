@@ -16,6 +16,7 @@ alias sudo='sudo '
 alias ..='cd ..'
 alias ls="exa"
 alias cat="bat"
+alias ssh="kitty +kitten ssh"
 
 # General shell exports
 export EDITOR=nvim 
