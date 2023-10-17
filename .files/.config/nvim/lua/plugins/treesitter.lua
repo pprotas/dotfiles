@@ -2,7 +2,7 @@ return {
   "nvim-treesitter/playground",
   { "RRethy/nvim-treesitter-endwise" },
   { "windwp/nvim-ts-autotag" },
-  { "romgrk/nvim-treesitter-context", config = true },
+  { "nvim-treesitter/nvim-treesitter-context", config = true },
   {
     "ckolkey/ts-node-action",
     config = true,
@@ -38,7 +38,6 @@ return {
       },
       ensure_installed = {
         "bash",
-        "help",
         "html",
         "javascript",
         "json",
@@ -53,6 +52,7 @@ return {
         "vim",
         "yaml",
         "ruby",
+        "graphql",
       },
     },
   },

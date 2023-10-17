@@ -14,4 +14,6 @@ vim.diagnostic.config({
   update_in_insert = false,
 })
 
+vim.g.root_spec = { "cwd" }
+
 -- vim.lsp.set_log_level(vim.lsp.log_levels.DEBUG)

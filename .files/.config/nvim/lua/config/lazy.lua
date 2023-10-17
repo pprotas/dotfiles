@@ -16,7 +16,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.copilot" },
     { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.vscode" },
-    -- { import = "lazyvim.plugins.extras.ui.edgy" },
     { import = "plugins" },
   },
   defaults = {
@@ -46,6 +45,3 @@ require("lazy").setup({
     },
   },
 })
-
--- Disable NeoTree and Telescope changing directories
-require("lazyvim.util").get_root = vim.loop.cwd

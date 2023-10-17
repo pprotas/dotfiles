@@ -16,6 +16,8 @@ return {
             vim.fn.setreg('"', content)
             vim.fn.setreg("1", content)
             vim.fn.setreg("+", content)
+
+            vim.print("Copied to clipboard: " .. content)
           end,
         },
       },
