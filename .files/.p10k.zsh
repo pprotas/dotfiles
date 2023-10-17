@@ -707,7 +707,6 @@
   
   #################[ rtx: runtime executor (https://github.com/jdxcode/rtx) ]##################
   function prompt_rtx() {
-    # local plugins=("${(@f)$(rtx ls --current 2>/dev/null | awk '$3!="~/.config/rtx/config.toml" {print $1, $2}')}")
     local plugins=("${(@f)$(rtx ls --current 2>/dev/null | awk '!/\(symlink\)/ && $3!="~/.config/rtx/config.toml" {print $1, $2}')}")
     local plugin
     for plugin in ${(k)plugins}; do
