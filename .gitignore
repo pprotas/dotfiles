@@ -17,3 +17,4 @@ node_modules
 .files/.config/configstore/update-notifier-npm.json
 .files/.config/op/config
 .files/.config/raycast
+.files/.config/lnav
