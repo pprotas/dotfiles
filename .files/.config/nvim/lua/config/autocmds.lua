@@ -18,29 +18,3 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   group = number_toggle,
   pattern = "*",
 })
-
-local filetype = vim.api.nvim_create_augroup("FileType", { clear = true })
-
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  callback = function()
-    vim.cmd("set filetype=gitconfig")
-  end,
-  group = filetype,
-  pattern = "*.gitconfig*",
-})
-
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  callback = function()
-    vim.cmd("set filetype=ruby")
-  end,
-  group = filetype,
-  pattern = "Brewfile",
-})
-
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  callback = function()
-    vim.cmd("set filetype=ruby")
-  end,
-  group = filetype,
-  pattern = "*.jbuilder",
-})
