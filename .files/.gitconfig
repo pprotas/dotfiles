@@ -6,8 +6,11 @@
   excludesfile = ~/.gitignore_global
   autocrlf = input
   attributesfile = ~/.gitattributes
+  pager = delta
 [init]
   defaultBranch = main
+[rebase]
+  updateRefs = true
 
 [credential]
   helper = osxkeychain
@@ -20,6 +23,7 @@
 
 [merge]
   tool = nvim
+  conflictstyle = diff3
 [mergetool "nvim"]
   cmd = nvim -f -c \"DiffviewOpen\"
 [mergetool]
@@ -28,6 +32,16 @@
 [alias]
   mergetool = "!nvim -c DiffviewOpen"
   dt = "! args=$@; shift $#; nvim -c \"DiffviewOpen $args\""
+
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    light = false
+    features = line-numbers decorations
+    true-color = always
+[diff]
+    colorMoved = default
 
 [includeIf "gitdir:~/Projects/h1/"]
   path = ~/.gitconfig_h1
