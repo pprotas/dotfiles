@@ -43,8 +43,3 @@ export HACKERONE_ON_DOCKER=true
 source /Users/pawel/.config/op/plugins.sh
 # Ruby stuff
 export PATH="$(brew --prefix)/opt/ruby@3.2/bin:$(brew --prefix)/opt/ruby@3.2/lib/ruby/gems/3.2.0/gems:$PATH"
-
-# Fix emacs keybinds in zsh
-bindkey -e
-
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
