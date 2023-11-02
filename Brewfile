@@ -17,7 +17,7 @@ cask 'spotify'
 cask 'whatsapp'
 cask '1password'
 cask 'spaceid'
-cask 'alacritty'
+cask 'alacritty' --no-quarantine
 cask 'font-jetbrains-mono-nerd-font'
 cask 'font-symbols-only-nerd-font'
 cask 'font-jetbrains-mono'
