@@ -17,9 +17,10 @@ bindkey -e
 alias vim='nvim'
 alias sudo='sudo '
 alias ..='cd ..'
-alias ls="exa"
+alias ls="lsd"
 alias cat="bat"
-alias ssh="kitty +kitten ssh"
+alias find="fd"
+alias sed="sd"
 
 # General shell exports
 export EDITOR=nvim 
