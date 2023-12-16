@@ -11,22 +11,16 @@ return {
           settings = {
             javascript = {
               inlayHints = {
-                includeInlayEnumMemberValueHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
                 includeInlayFunctionParameterTypeHints = true,
                 includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
                 includeInlayPropertyDeclarationTypeHints = true,
                 includeInlayVariableTypeHints = true,
               },
             },
             typescript = {
               inlayHints = {
-                includeInlayEnumMemberValueHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
                 includeInlayFunctionParameterTypeHints = true,
                 includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
                 includeInlayPropertyDeclarationTypeHints = true,
                 includeInlayVariableTypeHints = true,
               },
@@ -50,6 +44,23 @@ return {
             if client.name == "tsserver" then
               client.server_capabilities.documentFormattingProvider = false
             end
+            if client.name == "eslint" then
+              client.server_capabilities.documentFormattingProvider = true
+            end
+          end)
+        end,
+        rubocop = function()
+          require("lazyvim.util").lsp.on_attach(function(client, _)
+            if client.name == "rubocop" then
+              client.server_capabilities.documentFormattingProvider = false
+            end
+          end)
+        end,
+        solargraph = function()
+          require("lazyvim.util").lsp.on_attach(function(client, _)
+            if client.name == "solargraph" then
+              client.server_capabilities.documentFormattingProvider = false
+            end
           end)
         end,
       },
@@ -67,6 +78,24 @@ return {
         "misspell",
         "black",
         "taplo",
+      },
+    },
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        markdown = { "deno_fmt" },
+        ruby = { "rubocop" },
+      },
+    },
+  },
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        markdown = { "markdownlint" },
       },
     },
   },
