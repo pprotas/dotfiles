@@ -43,4 +43,4 @@ window:
     y: 16
   dynamic_padding: true
   decorations: transparent
-  option_as_alt: Both
+  option_as_alt: OnlyLeft
