@@ -18,3 +18,4 @@ node_modules
 .files/.config/op/config
 .files/.config/raycast
 .files/.config/lnav
+.files/.config/neofetch
