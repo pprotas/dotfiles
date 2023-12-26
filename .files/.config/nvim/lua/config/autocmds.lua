@@ -27,6 +27,7 @@ vim.api.nvim_create_autocmd("FileType", {
   group = augroup("close_with_q_custom"),
   pattern = {
     "fugitiveblame",
+    "oil",
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false

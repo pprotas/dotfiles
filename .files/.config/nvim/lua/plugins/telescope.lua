@@ -15,6 +15,12 @@ return {
           require("telescope").load_extension("fzf")
         end,
       },
+      {
+        "ThePrimeagen/harpoon",
+        config = function()
+          require("telescope").load_extension("harpoon")
+        end,
+      },
     },
     opts = {
       defaults = {
