@@ -34,3 +34,13 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("conceallevel"),
+  pattern = {
+    "markdown",
+  },
+  callback = function()
+    vim.o.conceallevel = 2
+  end,
+})

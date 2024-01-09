@@ -4,6 +4,10 @@ return {
   {
     "olimorris/onedarkpro.nvim",
     opts = {
+      highlights = {
+        ["@text.emphasis.markdown_inline"] = { style = "italic" },
+        ["@text.strong.markdown_inline"] = { style = "bold" },
+      },
       styles = {
         types = "NONE",
         methods = "NONE",
@@ -12,10 +16,10 @@ return {
         comments = "italic",
         keywords = "bold,italic",
         constants = "bold",
-        functions = "NONE",
+        functions = "bold",
         operators = "NONE",
         variables = "NONE",
-        parameters = "NONE",
+        parameters = "italic",
         conditionals = "italic",
         virtual_text = "italic",
       },

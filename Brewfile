@@ -30,7 +30,7 @@ brew 'curl'
 brew 'git'
 brew 'mise'
 brew 'tmux'
-brew 'neovim', args: ['HEAD']
+brew 'neovim'
 brew 'jq'
 brew 'lazygit'
 brew 'lazydocker'
