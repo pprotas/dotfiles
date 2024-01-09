@@ -28,7 +28,7 @@ cask 'keycastr'
 brew 'coreutils'
 brew 'curl'
 brew 'git'
-brew 'rtx'
+brew 'mise'
 brew 'tmux'
 brew 'neovim', args: ['HEAD']
 brew 'jq'

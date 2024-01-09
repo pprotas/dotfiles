@@ -48,7 +48,6 @@
     status                  # exit code of the last command
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
-    # rtx                     # rtx version manager (https://github.com/jdxcode/rtx)
     # direnv                  # direnv status (https://direnv.net/)
     # asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
     # virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
@@ -705,39 +704,6 @@
   # typeset -g POWERLEVEL9K_ASDF_JULIA_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_JULIA_SHOW_ON_UPGLOB='*.foo|*.bar'
   
-  #################[ rtx: runtime executor (https://github.com/jdxcode/rtx) ]##################
-  function prompt_rtx() {
-    local plugins=("${(@f)$(rtx ls --current 2>/dev/null | awk '!/\(symlink\)/ && $3!="~/.config/rtx/config.toml" {print $1, $2}')}")
-    local plugin
-    for plugin in ${(k)plugins}; do
-      local parts=("${(@s/ /)plugin}")
-      local tool=${(U)parts[1]}
-      local version=${parts[2]}
-      p10k segment -r -i "${tool}_ICON" -s $tool -t "$version"
-    done
-  }
-
-  typeset -g POWERLEVEL9K_RTX_FOREGROUND=0
-
-  typeset -g POWERLEVEL9K_RTX_DOTNET_CORE_FOREGROUND=134
-  typeset -g POWERLEVEL9K_RTX_ELIXIR_FOREGROUND=129
-  typeset -g POWERLEVEL9K_RTX_ERLANG_FOREGROUND=125
-  typeset -g POWERLEVEL9K_RTX_FLUTTER_FOREGROUND=38
-  typeset -g POWERLEVEL9K_RTX_GOLANG_FOREGROUND=37
-  typeset -g POWERLEVEL9K_RTX_GO_FOREGROUND=37
-  typeset -g POWERLEVEL9K_RTX_HASKELL_FOREGROUND=172
-  typeset -g POWERLEVEL9K_RTX_JAVA_FOREGROUND=32
-  typeset -g POWERLEVEL9K_RTX_JULIA_FOREGROUND=70
-  typeset -g POWERLEVEL9K_RTX_LUA_FOREGROUND=32
-  typeset -g POWERLEVEL9K_RTX_NODEJS_FOREGROUND=71
-  typeset -g POWERLEVEL9K_RTX_NODE_FOREGROUND=71
-  typeset -g POWERLEVEL9K_RTX_PERL_FOREGROUND=67
-  typeset -g POWERLEVEL9K_RTX_PHP_FOREGROUND=99
-  typeset -g POWERLEVEL9K_RTX_POSTGRES_FOREGROUND=31
-  typeset -g POWERLEVEL9K_RTX_PYTHON_FOREGROUND=190
-  typeset -g POWERLEVEL9K_RTX_RUBY_FOREGROUND=168
-  typeset -g POWERLEVEL9K_RTX_RUST_FOREGROUND=37
-
   ##########[ nordvpn: nordvpn connection status, linux only (https://nordvpn.com/) ]###########
   # NordVPN connection indicator color.
   typeset -g POWERLEVEL9K_NORDVPN_FOREGROUND=39
