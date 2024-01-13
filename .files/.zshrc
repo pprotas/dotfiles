@@ -17,6 +17,8 @@ bindkey -e
 alias vim='nvim'
 alias sudo='sudo '
 alias ..='cd ..'
+alias '??'='gh copilot suggest -t shell'
+alias explain='gh copilot explain'
 alias ls="lsd"
 alias cat="bat"
 alias find="fd"
