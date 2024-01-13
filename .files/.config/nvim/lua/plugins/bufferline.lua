@@ -1,6 +1,6 @@
 return {
   {
-    "kinsho/bufferline.nvim",
+    "akinsho/bufferline.nvim",
     enabled = false,
   },
 }
