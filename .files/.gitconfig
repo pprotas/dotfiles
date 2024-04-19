@@ -11,6 +11,8 @@
   defaultBranch = main
 [rebase]
   updateRefs = true
+[rerere]
+  enabled = true
 
 [credential]
   helper = osxkeychain
