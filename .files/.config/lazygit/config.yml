@@ -5,6 +5,7 @@ os:
   openLink: open "$(echo "{{link}}" | sed 's/%2F/\//g')"
 gui:
   nerdFontsVersion: "3"
+  experimentalShowBranchHeads: true
 keybinding:
   commits:
     moveDownCommit: "<c-n>"
