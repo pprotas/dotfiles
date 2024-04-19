@@ -36,6 +36,8 @@ if [[ "$OSTYPE" == "darwin" ]]; then
   # Ruby stuff
   export PATH="$(brew --prefix)/opt/ruby@3.2/bin:$(brew --prefix)/opt/ruby@3.2/lib/ruby/gems/3.2.0/gems:$PATH"
 else
+  alias ssh='ssh.exe'
+  alias ssh-add='ssh-add.exe'
   source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 fi
 
