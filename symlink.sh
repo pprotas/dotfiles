@@ -14,7 +14,7 @@ cd ~/dotfiles/.files || error "No .files directory found"
 
 # Get all the necessary dotfiles
 dotfiles_dir="${HOME}/dotfiles/.files"
-dotfiles=$(find "$dotfiles_dir" -depth 1)
+dotfiles=$(fd . "$dotfiles_dir" -Hd 1)
 
 for file in $dotfiles; do
   new_file="${file#"$dotfiles_dir/"}"

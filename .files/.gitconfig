@@ -14,12 +14,10 @@
 [rerere]
   enabled = true
 
-[credential]
-  helper = osxkeychain
 [gpg]
   format = ssh
 [gpg "ssh"]
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+  program = "/mnt/c/Users/Pawel/AppData/Local/1Password/app/8/op-ssh-sign-wsl"
 [commit]
   gpgsign = true
 

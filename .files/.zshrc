@@ -28,8 +28,17 @@ alias sed="sd"
 export EDITOR=nvim 
 export PATH="$HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# Load p10k
-source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+if [[ "$OSTYPE" == "darwin" ]]; then
+  # Load p10k
+  source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+  # H1
+  export HACKERONE_ON_DOCKER=true
+  # Ruby stuff
+  export PATH="$(brew --prefix)/opt/ruby@3.2/bin:$(brew --prefix)/opt/ruby@3.2/lib/ruby/gems/3.2.0/gems:$PATH"
+else
+  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+fi
+
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # mise
@@ -42,11 +51,3 @@ export FZF_CTRL_T_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{**/node_mod
 
 # z
 eval "$(zoxide init zsh)"
-
-# H1
-export HACKERONE_ON_DOCKER=true
-# 1Password
-source /Users/pawel/.config/op/plugins.sh
-# Ruby stuff
-export PATH="$(brew --prefix)/opt/ruby@3.2/bin:$(brew --prefix)/opt/ruby@3.2/lib/ruby/gems/3.2.0/gems:$PATH"
-
