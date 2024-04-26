@@ -17,8 +17,6 @@ bindkey -e
 alias vim='nvim'
 alias sudo='sudo '
 alias ..='cd ..'
-alias '??'='gh copilot suggest -t shell'
-alias explain='gh copilot explain'
 alias ls="lsd"
 alias cat="bat"
 alias find="fd"
@@ -47,7 +45,7 @@ fi
 eval "$(mise activate zsh)"
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(fzf --zsh)"
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*}'"
 export FZF_CTRL_T_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*}'"
 
