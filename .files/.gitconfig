@@ -7,7 +7,6 @@
   autocrlf = input
   attributesfile = ~/.gitattributes
   pager = delta
-	sshCommand = ssh.exe
 [init]
   defaultBranch = main
 [rebase]
@@ -18,7 +17,7 @@
 [gpg]
   format = ssh
 [gpg "ssh"]
-  program = "/mnt/c/Users/Pawel/AppData/Local/1Password/app/8/op-ssh-sign-wsl"
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [commit]
   gpgsign = true
 
