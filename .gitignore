@@ -22,3 +22,4 @@ node_modules
 .files/.config/StardewValley
 .files/.config/AWSVPNClient
 .files/.config/nvim/spell/*.spl
+.files/.config/gh/hosts.yml
