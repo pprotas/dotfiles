@@ -26,7 +26,7 @@ alias sed="sd"
 export EDITOR=nvim 
 export PATH="$HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-if [[ "$OSTYPE" == "darwin" ]]; then
+if [[ "$(uname)" == "Darwin" ]]; then
   # Load p10k
   source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
   # H1
