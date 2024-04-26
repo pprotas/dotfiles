@@ -1,3 +1,3 @@
 [submodule "nvim"]
     path = .files/.config/nvim
-    url = https://github.com/pprotas/nvim.git
+    url = git@github.com:pprotas/nvim.git
