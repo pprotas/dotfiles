@@ -1,11 +1,10 @@
-# yaml-language-server: $schema=https://json.schemastore.org/lazygit.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
 
 os:
-  editPreset: "nvim"
+  editPreset: "nvim-remote"
   openLink: open "$(echo "{{link}}" | sed 's/%2F/\//g')"
 gui:
   nerdFontsVersion: "3"
-  experimentalShowBranchHeads: true
 keybinding:
   commits:
     moveDownCommit: "<c-n>"
