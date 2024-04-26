@@ -1,3 +1,0 @@
-return {
-  "felipec/vim-sanegx",
-}
