@@ -18,7 +18,7 @@
 [gpg]
   format = ssh
 [gpg "ssh"]
-  program = "/mnt/c/Users/Pawel/AppData/Local/1Password/app/8/op-ssh-sign-wsl"
+  program = gpg-sign-wrapper
 [commit]
   gpgsign = true
 
