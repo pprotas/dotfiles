@@ -1,7 +1,8 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
 
 os:
-  editPreset: "nvim-remote"
+  edit: 'nvim {{filename}}'
+  editPreset: nvim-remote
   openLink: open "$(echo "{{link}}" | sed 's/%2F/\//g')"
 gui:
   nerdFontsVersion: "3"
