@@ -7,6 +7,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# <C-r> history
+HISTFILE=~/.zsh_history
+HISTSIZE=99999999
+SAVEHIST=99999999
+setopt append_history
+
 # Change default config home
 export XDG_CONFIG_HOME="$HOME/.config"
 
