@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Heavily inspired by https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 # Special thanks to: GitHub Copilot and https://macos-defaults.com/finder/appleshowallextensions.html
 echo "[osconfig] INFO: Installation started"
@@ -11,7 +12,11 @@ osascript -e 'tell application "System Preferences" to quit'
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+	sudo -n true
+	sleep 60
+	kill -0 "$$" || exit
+done 2>/dev/null &
 
 # Dock
 # ====
@@ -64,7 +69,6 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-
 # Keyboard
 # ========
 # Disable auto correct
@@ -75,11 +79,6 @@ defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 # Fast key repeat
 defaults write NSGlobalDomain KeyRepeat -int 1
-
-# Screenshots
-# ===========
-# Use JPG for screenshots
-defaults write com.apple.screencapture type jpg
 
 # Finder
 # ======
@@ -105,22 +104,10 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 # Show Library
 chflags nohidden ~/Library
+
 # Activity Monitor
 # ================
 # Update very often
 defaults write com.apple.ActivityMonitor UpdatePeriod -int 1
-
-# iTerm2
-# ======
-# Path to config
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.config/iterm2/"
-
-# Google Chrome
-# =============
-# Use the system-native print preview dialog
-defaults write com.google.Chrome DisablePrintPreview -bool true
-
-# Expand the print dialog by default
-defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 
 echo "[osconfig] INFO: Installation finished"

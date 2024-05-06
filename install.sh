@@ -2,12 +2,13 @@
 
 echo "[install] INFO: Installation started"
 
-~/dotfiles/maco.sh
+if [[ "$(uname)" == "Darwin" ]]; then
+	~/dotfiles/maco.sh
+fi
+
+cp bin/gpg-sign-wrapper.sh /usr/local/bin/gpg-sign-wrapper
+sudo chmod +x /usr/local/bin/gpg-sign-wrapper
+
 ~/dotfiles/symlink.sh
 
 echo "[install] INFO: Installation finished"
-echo "[install] INFO: Optional/manual next steps:"
-echo " - Restart your laptop"
-echo " - Set up the necessary license keys or credentials for the installed applications"
-echo " - Organise the dock & menu bar"
-echo " - Change wallpaper"

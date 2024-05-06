@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "[brew] INFO: Installation started"
+
 # Set-up
 # ======
 # Install Homebrew if it's not installed already
@@ -16,10 +17,5 @@ brew upgrade
 # Packages
 # ========
 brew bundle
-
-# Services
-# ========
-yabai --start-service
-skhd --setart-service
 
 echo "[brew] INFO: Installation finished"
