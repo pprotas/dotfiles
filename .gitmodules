@@ -1,5 +1,5 @@
 [submodule "nvim"]
-  path = .files/.config/nvim
+  path = files/.config/nvim
   url = git@github.com:pprotas/nvim.git
   branch = main
   update = rebase
