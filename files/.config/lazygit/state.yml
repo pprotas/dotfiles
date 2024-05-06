@@ -1,0 +1,16 @@
+lastupdatecheck: 0
+recentrepos:
+    - /home/pprotas/dotfiles
+    - /home/pprotas/.config/nvim
+    - /home/pprotas/projects/c-server
+startuppopupversion: 5
+lastversion: pre-0.41.00c55d571
+customcommandshistory:
+    - qa
+hidecommandlog: false
+ignorewhitespaceindiffview: false
+diffcontextsize: 3
+localbranchsortorder: recency
+remotebranchsortorder: alphabetical
+gitlogorder: topo-order
+gitlogshowgraph: always
