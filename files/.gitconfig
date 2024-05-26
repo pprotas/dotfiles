@@ -9,10 +9,6 @@
   pager = delta
 [init]
   defaultBranch = main
-[rebase]
-  updateRefs = true
-[rerere]
-  enabled = true
 
 [gpg]
   format = ssh
@@ -21,14 +17,22 @@
 [commit]
   gpgsign = true
 
+[pull]
+  rebase = true
+
+[rebase]
+  updateRefs = true
+[rerere]
+  enabled = true
+
 [merge]
   tool = nvim
   conflictstyle = diff3
-[mergetool "nvim"]
-  cmd = nvim -f -c \"DiffviewOpen\"
 [mergetool]
   prompt = false
   keepBackup = false
+[mergetool "nvim"]
+  cmd = nvim -f -c \"DiffviewOpen\"
 [alias]
   mergetool = "!nvim -c DiffviewOpen"
   dt = "! args=$@; shift $#; nvim -c \"DiffviewOpen $args\""
