@@ -1,0 +1,39 @@
+# FONT
+font-family = JetBrainsMono Nerd Font
+
+# COLORS
+# black
+palette = 0=#000000
+palette = 8=#1a1a1a
+# red
+palette = 1=#ef596f
+palette = 9=#f38897
+# green
+palette = 2=#89ca78
+palette = 10=#a9d89d
+# yellow
+palette = 3=#e5c07b
+palette = 11=#edd4a6
+# blue
+palette = 4=#61afef
+palette = 12=#8fc6f4
+# purple
+palette = 5=#d55fde
+palette = 13=#e089e7
+# aqua
+palette = 6=#2bbac5
+palette = 14=#4bced8
+# white
+palette = 7=#abb2bf
+palette = 15=#c8cdd5
+
+# THEME
+background = #000000
+foreground = #abb2bf
+selection-background = #434852
+cursor-color = #d55fde
+
+# OTHER
+mouse-hide-while-typing = true
+macos-option-as-alt = true
+
