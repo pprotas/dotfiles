@@ -6,6 +6,7 @@ os:
   openLink: open "$(echo "{{link}}" | sed 's/%2F/\//g')"
 gui:
   nerdFontsVersion: "3"
+  border: "rounded"
 keybinding:
   commits:
     moveDownCommit: "<c-n>"
