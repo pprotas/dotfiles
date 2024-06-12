@@ -24,3 +24,4 @@ files/.config/AWSVPNClient
 files/.config/nvim/spell/*.spl
 files/.config/gh/hosts.yml
 files/.config/AWS VPN Client/AWS VPN Client/NetSparkleUpdater
+files/.config/.wrangler
