@@ -25,3 +25,6 @@ files/.config/nvim/spell/*.spl
 files/.config/gh/hosts.yml
 files/.config/AWS VPN Client/AWS VPN Client/NetSparkleUpdater
 files/.config/.wrangler
+files/.config/zed/conversations
+files/.config/zed/embeddings/semantic-index-db.0.mdb
+files/.config/zed/prompts/prompts-library-db.0.mdb
