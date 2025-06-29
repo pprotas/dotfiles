@@ -20,6 +20,9 @@
 [pull]
   rebase = true
 
+[push]
+  autoSetupRemote = true
+
 [rebase]
   updateRefs = true
 [rerere]
@@ -49,3 +52,8 @@
 
 [includeIf "gitdir:~/Projects/h1/"]
   path = ~/.gitconfig_h1
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true

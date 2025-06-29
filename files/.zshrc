@@ -1,11 +1,8 @@
 #!/bin/zsh
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# pure
+autoload -U promptinit; promptinit
+prompt pure
 
 # <C-r> history
 HISTFILE=~/.zsh_history
@@ -23,22 +20,15 @@ bindkey -e
 alias vim='nvim'
 alias sudo='sudo '
 alias ..='cd ..'
-alias ls="lsd"
-alias cat="bat"
-alias find="fd"
-alias sed="sd"
+alias e='$EDITOR'
 
 # General shell exports
-export EDITOR=nvim 
+export EDITOR=code
 export PATH="$HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  # Load p10k
-  source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
   # H1
   export HACKERONE_ON_DOCKER=true
-  # Ruby stuff
-  export PATH="$(brew --prefix)/opt/ruby@3.2/bin:$(brew --prefix)/opt/ruby@3.2/lib/ruby/gems/3.2.0/gems:$PATH"
 else
   export GIT_SSH_COMMAND=ssh.exe
   alias ssh='ssh.exe'
@@ -46,10 +36,9 @@ else
   source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 fi
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # mise
 eval "$(mise activate zsh)"
+export RUBY_YJIT_ENABLE=1
 
 # fzf
 eval "$(fzf --zsh)"
@@ -58,3 +47,11 @@ export FZF_CTRL_T_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{**/node_mod
 
 # z
 eval "$(zoxide init zsh)"
+
+# pnpm
+export PNPM_HOME="/Users/pawel/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

@@ -5,3 +5,4 @@ tags
 **/.java-version
 .neoconf.json
 .zed
+rspec_wrapper

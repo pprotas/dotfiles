@@ -1,7 +1,9 @@
 [tools]
 go = "latest"
-node = "lts"
+node = "latest"
 python = "latest"
 ruby = "latest"
 lua = "latest"
 zig = "latest"
+rust = "latest"
+aws = "latest"

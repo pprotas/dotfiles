@@ -1,6 +1,6 @@
 [user]
   email = pawel@hackerone.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF3WCvRB1/WEPHxyJANEFzvOM2M32/uijkisIR2pT6vl
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICNjjnJv7F6vq6flJRrrlcoVth9iTrg2GJrbYKiak5wC
 [merge "merge-structure-sql"]
   name = Rails structure.sql merge driver
   driver = git-merge-structure-sql %A %O %B
@@ -8,3 +8,5 @@
   helper = osxkeychain
 [gpg "ssh"]
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[core]
+  sshCommand = "/Users/pawel/Projects/h1/core/bin/ssh-git"
