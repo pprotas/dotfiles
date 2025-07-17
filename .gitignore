@@ -28,3 +28,5 @@ files/.config/.wrangler
 files/.config/zed/conversations
 files/.config/zed/embeddings/semantic-index-db.0.mdb
 files/.config/zed/prompts/prompts-library-db.0.mdb
+files/.config/glab-cli
+files/.config/ghostty/*.bak

@@ -1,5 +1,13 @@
 #!/bin/zsh
 
+# git zsh completion
+if type brew &>/dev/null; then
+ FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+ autoload -Uz compinit
+ compinit
+fi
+
 # pure
 autoload -U promptinit; promptinit
 prompt pure
@@ -26,6 +34,9 @@ alias e='$EDITOR'
 export EDITOR=code
 export PATH="$HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+# ruby
+export RUBY_YJIT_ENABLE=1
+
 if [[ "$(uname)" == "Darwin" ]]; then
   # H1
   export HACKERONE_ON_DOCKER=true
@@ -33,12 +44,10 @@ else
   export GIT_SSH_COMMAND=ssh.exe
   alias ssh='ssh.exe'
   alias ssh-add='ssh-add.exe'
-  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 fi
 
 # mise
 eval "$(mise activate zsh)"
-export RUBY_YJIT_ENABLE=1
 
 # fzf
 eval "$(fzf --zsh)"
@@ -54,4 +63,3 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end

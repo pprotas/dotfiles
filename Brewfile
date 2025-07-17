@@ -1,46 +1,40 @@
-# frozen_string_literal: true
-
-tap 'koekeishiya/formulae'
-tap 'homebrew/cask-fonts'
-tap 'romkatv/powerlevel10k'
-tap '1password/tap'
-
-cask 'mission-control-plus'
-cask 'dozer'
-cask 'alt-tab'
-cask 'monitorcontrol'
-cask 'middle'
-cask 'discretescroll'
-cask 'spotify'
-cask 'whatsapp'
+# Always installed packages
+# =========================
 cask '1password'
-cask 'spaceid'
-cask 'alacritty' --no-quarantine
-cask 'font-jetbrains-mono-nerd-font'
 cask '1password-cli'
-cask 'kap'
-cask 'keycastr'
+cask 'ghostty'
+cask 'jordanbaird-ice'
+cask 'logi-options+'
+cask 'middle'
+cask 'spotify'
+cask 'tidal'
+cask 'visual-studio-code'
 
+brew 'btop'
 brew 'coreutils'
 brew 'curl'
-brew 'git'
-brew 'mise'
-brew 'tmux'
-brew 'neovim'
-brew 'jq'
-brew 'lazygit'
-brew 'lazydocker'
 brew 'fzf'
-brew 'zoxide'
-brew 'powerlevel10k'
-brew 'docker'
-brew 'make'
-brew 'rust'
-brew 'bat'
-brew 'lsd'
-brew 'sd'
-brew 'fd'
-brew 'btop'
+brew 'git'
+brew 'jq'
+brew 'mise'
+brew 'neovim'
+brew 'pure'
 brew 'ripgrep'
-brew 'tree'
-brew 'git-delta'
+brew 'zoxide'
+brew 'zsh-completions'
+
+# Personal machine packages
+# =========================
+if ENV['PERSONAL_MACHINE']
+end
+
+# Work machine packages
+# =====================
+if ENV['WORK_MACHINE']
+  cask 'aws-vpn-client'
+  cask 'orbstack'
+  cask 'slack'
+
+  brew 'awscli'
+  brew 'glab'
+end

@@ -37,3 +37,4 @@ cursor-color = #d55fde
 mouse-hide-while-typing = true
 macos-option-as-alt = true
 
+keybind = shift+enter=text:\n

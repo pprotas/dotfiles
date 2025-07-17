@@ -28,18 +28,6 @@
 [rerere]
   enabled = true
 
-[merge]
-  tool = nvim
-  conflictstyle = diff3
-[mergetool]
-  prompt = false
-  keepBackup = false
-[mergetool "nvim"]
-  cmd = nvim -f -c \"DiffviewOpen\"
-[alias]
-  mergetool = "!nvim -c DiffviewOpen"
-  dt = "! args=$@; shift $#; nvim -c \"DiffviewOpen $args\""
-
 [interactive]
     diffFilter = delta --color-only
 [delta]
@@ -52,8 +40,3 @@
 
 [includeIf "gitdir:~/Projects/h1/"]
   path = ~/.gitconfig_h1
-[credential]
-	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager
-[credential "https://dev.azure.com"]
-	useHttpPath = true
