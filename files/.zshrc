@@ -38,8 +38,6 @@ export PATH="$HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.b
 export RUBY_YJIT_ENABLE=1
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  # H1
-  export HACKERONE_ON_DOCKER=true
 else
   export GIT_SSH_COMMAND=ssh.exe
   alias ssh='ssh.exe'
