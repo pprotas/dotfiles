@@ -8,7 +8,7 @@ cask 'logi-options+'
 cask 'middle'
 cask 'spotify'
 cask 'tidal'
-cask 'visual-studio-code'
+cask 'zed'
 
 brew 'btop'
 brew 'coreutils'
