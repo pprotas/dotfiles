@@ -6,7 +6,6 @@
   excludesfile = ~/.gitignore_global
   autocrlf = input
   attributesfile = ~/.gitattributes
-  pager = delta
 [init]
   defaultBranch = main
 
@@ -28,11 +27,6 @@
 [rerere]
   enabled = true
 
-[interactive]
-    diffFilter = delta --color-only
-[delta]
-    navigate = true
-    light = false
     features = line-numbers decorations
     true-color = always
 [diff]
