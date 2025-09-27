@@ -34,6 +34,7 @@ if ENV['WORK_MACHINE']
   cask 'aws-vpn-client'
   cask 'orbstack'
   cask 'slack'
+  cask 'figma'
 
   brew 'awscli'
   brew 'glab'
