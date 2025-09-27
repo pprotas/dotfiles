@@ -36,5 +36,5 @@ cursor-color = #d55fde
 # OTHER
 mouse-hide-while-typing = true
 macos-option-as-alt = true
-
-keybind = shift+enter=text:\n
+shell-integration = zsh
+keybind = global:cmd+shift+backquote=toggle_quick_terminal

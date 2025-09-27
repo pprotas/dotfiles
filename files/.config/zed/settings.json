@@ -1,0 +1,130 @@
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "use_system_window_tabs": true,
+  "agent": {
+    "profiles": {
+      "write": {
+        "name": "Write",
+        "tools": {
+          "copy_path": true,
+          "create_directory": true,
+          "delete_path": true,
+          "diagnostics": true,
+          "edit_file": true,
+          "fetch": true,
+          "list_directory": true,
+          "project_notifications": false,
+          "move_path": true,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "grep": true,
+          "terminal": true,
+          "thinking": true,
+          "web_search": true
+        },
+        "enable_all_context_servers": true,
+        "context_servers": {
+          "mcp-server-gitlab": {
+            "tools": {
+              "push_files": false,
+              "fork_repository": false,
+              "create_repository": false,
+              "create_merge_request": false,
+              "create_issue": false,
+              "create_branch": false
+            }
+          }
+        }
+      }
+    },
+    "always_allow_tool_actions": true,
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5"
+    },
+    "play_sound_when_agent_done": true,
+    "default_profile": "write"
+  },
+  "context_servers": {
+    "mcp-server-context7": {
+      "source": "extension",
+      "enabled": true,
+      "settings": {
+        "default_minimum_tokens": "10000"
+      }
+    },
+    "postgres-context-server": {
+      "source": "extension",
+      "enabled": true,
+      "settings": {
+        "database_url": "postgresql://postgres:hunter3@127.0.0.1:5432/core"
+      }
+    }
+  },
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "minimap": {
+    "show": "auto"
+  },
+  "inlay_hints": {
+    "enabled": true,
+    "show_value_hints": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "show_background": false,
+    "edit_debounce_ms": 700,
+    "scroll_debounce_ms": 50,
+    "toggle_on_modifiers_press": {
+      "control": false,
+      "alt": false,
+      "shift": false,
+      "platform": false,
+      "function": false
+    }
+  },
+  "telemetry": {
+    "metrics": false
+  },
+  "vim_mode": true,
+  "vim": {
+    "toggle_relative_line_numbers": true
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Vercel Dark"
+  },
+  "agent_servers": {
+    "claude": {
+      "command": "npx",
+      "args": ["--yes", "@zed-industries/claude-code-acp"],
+      "env": {
+        "CLAUDE_CODE_USE_BEDROCK": "1",
+        "AWS_PROFILE": "PowerUserWithModels-790338063405",
+        "AWS_REGION": "us-west-2"
+      }
+    }
+  },
+  "language_models": {
+    "bedrock": {
+      "authentication_method": "sso",
+      "region": "us-west-2",
+      "profile": "PowerUserWithModels-790338063405"
+    }
+  },
+  "indent_guides": {
+    "coloring": "indent_aware"
+  }
+}

@@ -31,7 +31,7 @@ alias ..='cd ..'
 alias e='$EDITOR'
 
 # General shell exports
-export EDITOR=code
+export EDITOR=zed
 export PATH="$HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # ruby
