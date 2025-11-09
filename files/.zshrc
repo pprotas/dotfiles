@@ -38,6 +38,8 @@ export PATH="$HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.b
 export RUBY_YJIT_ENABLE=1
 
 if [[ "$(uname)" == "Darwin" ]]; then
+  # replace macOS BSD utils with GNU utils
+  PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 else
   export GIT_SSH_COMMAND=ssh.exe
   alias ssh='ssh.exe'
