@@ -6,75 +6,63 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "use_system_window_tabs": true,
-  "agent": {
-    "profiles": {
-      "write": {
-        "name": "Write",
-        "tools": {
-          "copy_path": true,
-          "create_directory": true,
-          "delete_path": true,
-          "diagnostics": true,
-          "edit_file": true,
-          "fetch": true,
-          "list_directory": true,
-          "project_notifications": false,
-          "move_path": true,
-          "now": true,
-          "find_path": true,
-          "read_file": true,
-          "grep": true,
-          "terminal": true,
-          "thinking": true,
-          "web_search": true
-        },
-        "enable_all_context_servers": true,
-        "context_servers": {
-          "mcp-server-gitlab": {
-            "tools": {
-              "push_files": false,
-              "fork_repository": false,
-              "create_repository": false,
-              "create_merge_request": false,
-              "create_issue": false,
-              "create_branch": false
-            }
-          }
-        }
-      }
-    },
-    "always_allow_tool_actions": true,
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5"
-    },
-    "play_sound_when_agent_done": true,
-    "default_profile": "write"
+  "debugger": {
+    "timeout": 10000
   },
-  "context_servers": {
-    "mcp-server-context7": {
-      "source": "extension",
-      "enabled": true,
-      "settings": {
-        "default_minimum_tokens": "10000"
-      }
-    },
-    "postgres-context-server": {
-      "source": "extension",
-      "enabled": true,
-      "settings": {
-        "database_url": "postgresql://postgres:hunter3@127.0.0.1:5432/core"
-      }
+  // Editor
+  "ssh_connections": [
+    {
+      "host": "gitlab.inverselink.com",
+      "args": [],
+      "projects": []
+    }
+  ],
+  "diagnostics": {
+    "inline": {
+      "enabled": false
     }
   },
-  "icon_theme": "Colored Zed Icons Theme Dark",
-  "features": {
-    "edit_prediction_provider": "copilot"
+  "vim_mode": true,
+  "vim": {
+    "toggle_relative_line_numbers": true,
+    "use_smartcase_find": true
   },
+  "autosave": "on_focus_change",
+  "auto_signature_help": true,
+  "use_smartcase_search": true,
+  // UI
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Vercel Dark"
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+    "activate_on_close": "history",
+    "show_close_button": "hover",
+    "show_diagnostics": "all"
+  },
+  "use_system_window_tabs": true,
+  "pane_split_direction_horizontal": "down",
+  "pane_split_direction_vertical": "right",
   "minimap": {
     "show": "auto"
   },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "indent_guides": {
+    "coloring": "indent_aware"
+  },
+  "redact_private_values": true,
+  "soft_wrap": "editor_width",
+  "outline_panel": { "button": false },
+  "collaboration_panel": { "button": false },
+  "agent": { "button": false },
+  "notification_panel": { "button": false },
+  // LSP
+  "go_to_definition_fallback": "none",
   "inlay_hints": {
     "enabled": true,
     "show_value_hints": true,
@@ -92,39 +80,8 @@
       "function": false
     }
   },
-  "telemetry": {
-    "metrics": false
-  },
-  "vim_mode": true,
-  "vim": {
-    "toggle_relative_line_numbers": true
-  },
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
-  "theme": {
-    "mode": "system",
-    "light": "Ayu Light",
-    "dark": "Vercel Dark"
-  },
-  "agent_servers": {
-    "claude": {
-      "command": "npx",
-      "args": ["--yes", "@zed-industries/claude-code-acp"],
-      "env": {
-        "CLAUDE_CODE_USE_BEDROCK": "1",
-        "AWS_PROFILE": "PowerUserWithModels-790338063405",
-        "AWS_REGION": "us-west-2"
-      }
-    }
-  },
-  "language_models": {
-    "bedrock": {
-      "authentication_method": "sso",
-      "region": "us-west-2",
-      "profile": "PowerUserWithModels-790338063405"
-    }
-  },
-  "indent_guides": {
-    "coloring": "indent_aware"
+  // AI
+  "features": {
+    "edit_prediction_provider": "copilot"
   }
 }
