@@ -66,3 +66,6 @@ esac
 
 # op
 source /Users/pawel/.config/op/plugins.sh
+
+# claude
+export PATH="$HOME/.local/bin:$PATH"
