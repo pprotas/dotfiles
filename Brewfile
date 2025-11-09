@@ -9,6 +9,7 @@ cask 'middle'
 cask 'spotify'
 cask 'tidal'
 cask 'zed'
+cask 'adguard'
 
 brew 'btop'
 brew 'coreutils'
