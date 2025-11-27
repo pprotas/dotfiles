@@ -55,11 +55,14 @@
   "indent_guides": {
     "coloring": "indent_aware"
   },
-  "redact_private_values": true,
   "soft_wrap": "editor_width",
   "outline_panel": { "button": false },
   "collaboration_panel": { "button": false },
-  "agent": { "button": false },
+  "agent": { "inline_assistant_model": {
+                   "provider": "copilot_chat",
+                   "model": "claude-sonnet-4.5"
+             },
+             "button": false },
   "notification_panel": { "button": false },
   // LSP
   "go_to_definition_fallback": "none",
