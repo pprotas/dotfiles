@@ -6,8 +6,40 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "sticky_scroll": {
+    "enabled": true
+  },
   "debugger": {
     "timeout": 10000
+  },
+  "language_models": {
+    "bedrock": {
+      "authentication_method": "sso",
+      "region": "us-west-2",
+      "profile": "default"
+    }
+  },
+  "languages": {
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll": true,
+        "source.fixAll.eslint": true
+      }
+    }, "TSX": {
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll": true,
+        "source.fixAll.eslint": true
+      }
+    },
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll": true,
+        "source.fixAll.eslint": true
+      }
+    }
   },
   // Editor
   "ssh_connections": [
@@ -58,14 +90,25 @@
   "soft_wrap": "editor_width",
   "outline_panel": { "button": false },
   "collaboration_panel": { "button": false },
-  "agent": { "inline_assistant_model": {
-                   "provider": "copilot_chat",
-                   "model": "claude-sonnet-4.5"
-             },
-             "button": false },
   "notification_panel": { "button": false },
   // LSP
   "go_to_definition_fallback": "none",
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "preferences": {
+            "importModuleSpecifier": "non-relative"
+          }
+        },
+        "javascript": {
+          "preferences": {
+            "importModuleSpecifier": "non-relative"
+          }
+        }
+      }
+    }
+  },
   "inlay_hints": {
     "enabled": true,
     "show_value_hints": true,
@@ -83,7 +126,13 @@
       "function": false
     }
   },
-  // AI
+  "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "amazon-bedrock",
+      "model": "claude-sonnet-4-5"
+    }
+  },
   "features": {
     "edit_prediction_provider": "copilot"
   }

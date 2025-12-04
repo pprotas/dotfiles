@@ -37,6 +37,11 @@
       "space c f": "editor::FormatSelections"
     }
   },
+  // Normal mode only
+  {
+    "context": "vim_mode == normal",
+    "bindings": { "Y": "vim::YankToEndOfLine" }
+  },
   {
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
@@ -105,7 +110,7 @@
   },
   // Git panel actions
   {
-    "context": "GitPanel && !(vim_mode == insert)",
+    "context": "GitPanel && !(vim_mode == insert) && !menu && !Picker",
     "bindings": {
       "a": "git::StageAll",
       "A": "git::UnstageAll",
@@ -121,7 +126,7 @@
   },
   // Pane splits
   {
-    "context": "Pane && VimControl",
+    "context": "VimControl && !menu",
     "bindings": {
       // Splits
       "space |": "pane::SplitVertical",
