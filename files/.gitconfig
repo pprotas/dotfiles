@@ -17,20 +17,30 @@
   gpgsign = true
 
 [pull]
-  rebase = true
+  ff = only
 
 [push]
   autoSetupRemote = true
+  forceWithLease = true
 
 [rebase]
   updateRefs = true
+  autoStash = true
 [rerere]
   enabled = true
 
-    features = line-numbers decorations
-    true-color = always
 [diff]
-    colorMoved = default
+  mnemonicPrefix = true
+  colorMoved = zebra
+  compactionHeuristic = true
+
+[grep]
+  lineNumber = true
+  patternType = perl
+  extendedRegexp = true
+
+[help]
+  autocorrect = prompt
 
 [includeIf "gitdir:~/Projects/h1/"]
   path = ~/.gitconfig_h1
