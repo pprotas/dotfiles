@@ -26,7 +26,8 @@
         "source.fixAll": true,
         "source.fixAll.eslint": true
       }
-    }, "TSX": {
+    },
+    "TSX": {
       "code_actions_on_format": {
         "source.organizeImports": true,
         "source.fixAll": true,
@@ -85,8 +86,9 @@
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "indent_guides": {
-    "coloring": "indent_aware"
+    "coloring": "fixed"
   },
+  "colorize_brackets": true,
   "soft_wrap": "editor_width",
   "outline_panel": { "button": false },
   "collaboration_panel": { "button": false },
