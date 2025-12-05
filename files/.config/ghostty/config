@@ -37,4 +37,5 @@ cursor-color = #d55fde
 mouse-hide-while-typing = true
 macos-option-as-alt = true
 shell-integration = zsh
+shell-integration-features = cursor, title, ssh-env, ssh-terminfo, sudo
 keybind = global:cmd+shift+backquote=toggle_quick_terminal
