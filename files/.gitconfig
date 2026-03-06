@@ -42,5 +42,8 @@
 [help]
   autocorrect = prompt
 
+[alias]
+  s = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | fzf --reverse --height=20% --info=inline | xargs git checkout"
+
 [includeIf "gitdir:~/Projects/h1/"]
   path = ~/.gitconfig_h1
