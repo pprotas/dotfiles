@@ -6,14 +6,20 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "space": null, // Disable the default action vim::WrappingRight
+    },
+  },
   // Pane navigation
   {
     "bindings": {
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown"
-    }
+      "ctrl-j": "workspace::ActivatePaneDown",
+    },
   },
   // Visual && Normal
   {
@@ -24,8 +30,8 @@
       "k": ["workspace::SendKeystrokes", "g k"],
       // Select syntax nodes
       "+": "vim::SelectLargerSyntaxNode",
-      "-": "vim::SelectSmallerSyntaxNode"
-    }
+      "-": "vim::SelectSmallerSyntaxNode",
+    },
   },
   // Visual mode only
   {
@@ -34,13 +40,13 @@
       ">": ["workspace::SendKeystrokes", "> g v"],
       "<": ["workspace::SendKeystrokes", "< g v"],
       // Code actions
-      "space c f": "editor::FormatSelections"
-    }
+      "space c f": "editor::FormatSelections",
+    },
   },
   // Normal mode only
   {
     "context": "vim_mode == normal",
-    "bindings": { "Y": "vim::YankToEndOfLine" }
+    "bindings": { "Y": "vim::YankToEndOfLine" },
   },
   {
     "context": "Editor && VimControl && !VimWaiting && !menu",
@@ -84,29 +90,29 @@
       "space x t": "editor::SpawnNearestTask",
       "space x x": "task::Spawn",
       "space x b": "editor::ToggleBreakpoint",
-      "space X": "debug_panel::ToggleFocus"
-    }
+      "space X": "debug_panel::ToggleFocus",
+    },
   },
   {
     "context": "RecentProjects",
     "bindings": {
       "ctrl-o": "workspace::Open",
-      "ctrl-r": "projects::OpenRemote"
-    }
+      "ctrl-r": "projects::OpenRemote",
+    },
   },
   // Left dock exit pane
   {
     "context": "(GitPanel || ProjectPanel) && !editing && !(vim_mode == insert)",
     "bindings": {
-      "escape escape": "workspace::ToggleLeftDock"
-    }
+      "escape escape": "workspace::ToggleLeftDock",
+    },
   },
   // Agent panel action
   {
     "context": "AgentPanel && !(vim_mode == insert)",
     "bindings": {
-      "escape escape": "workspace::ToggleRightDock"
-    }
+      "escape escape": "workspace::ToggleRightDock",
+    },
   },
   // Git panel actions
   {
@@ -121,8 +127,8 @@
       "r": "git::RenameBranch",
       "b": "git::Branch",
       "p": "git::Push",
-      "P": "git::ForcePush"
-    }
+      "P": "git::ForcePush",
+    },
   },
   // Pane splits
   {
@@ -130,31 +136,31 @@
     "bindings": {
       // Splits
       "space |": "pane::SplitVertical",
-      "space -": "pane::SplitHorizontal"
-    }
+      "space -": "pane::SplitHorizontal",
+    },
   },
   {
     "context": "(Pane && !Editor) || ProjectSearchBar",
     "bindings": {
       // Close dock and search panes
-      "escape escape": "pane::CloseActiveItem"
-    }
+      "escape escape": "pane::CloseActiveItem",
+    },
   },
   // Search pane matches
   {
     "context": "Editor && VimControl",
     "bindings": {
       "[ f": "search::SelectPreviousMatch",
-      "] f": "search::SelectNextMatch"
-    }
+      "] f": "search::SelectNextMatch",
+    },
   },
   // Terminal panel action
   {
     "context": "Terminal",
     "bindings": {
       "ctrl-t": "workspace::ToggleBottomDock",
-      "ctrl-`": "workspace::NewTerminal"
-    }
+      "ctrl-`": "workspace::NewTerminal",
+    },
   },
   // Project panel actions
   {
@@ -174,8 +180,8 @@
       "J": "project_panel::SelectNextDirectory",
       "k": "menu::SelectPrevious",
       "K": "project_panel::SelectPrevDirectory",
-      "-": "project_panel::SelectParent"
-    }
+      "-": "project_panel::SelectParent",
+    },
   },
   // Debug panel actions
   {
@@ -187,14 +193,14 @@
       "s": "debugger::StepOver",
       "x": "debugger::Stop",
       "j": "menu::SelectNext",
-      "k": "menu::SelectPrevious"
-    }
+      "k": "menu::SelectPrevious",
+    },
   },
   {
     "context": "DebugPanel",
     "bindings": {
       "alt-v": "debugger::FocusVariables",
-      "alt-c": "debugger::FocusConsole"
-    }
-  }
+      "alt-c": "debugger::FocusConsole",
+    },
+  },
 ]

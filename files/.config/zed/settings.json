@@ -6,41 +6,56 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "edit_predictions": {
+    "provider": "copilot"
+  },
+  "agent_servers": {
+    "opencode": {
+      "type": "extension",
+      "favorite_models": [
+        "amazon-bedrock/global.anthropic.claude-opus-4-5-20251101-v1:0",
+        "amazon-bedrock/anthropic.claude-opus-4-6-v1/max"
+      ]
+    }
+  },
+  "git_panel": {
+    "tree_view": true,
+  },
   "sticky_scroll": {
-    "enabled": true
+    "enabled": true,
   },
   "debugger": {
-    "timeout": 10000
+    "timeout": 10000,
   },
   "language_models": {
     "bedrock": {
       "authentication_method": "sso",
       "region": "us-west-2",
-      "profile": "default"
-    }
+      "profile": "default",
+    },
   },
   "languages": {
     "TypeScript": {
       "code_actions_on_format": {
         "source.organizeImports": true,
         "source.fixAll": true,
-        "source.fixAll.eslint": true
-      }
+        "source.fixAll.eslint": true,
+      },
     },
     "TSX": {
       "code_actions_on_format": {
         "source.organizeImports": true,
         "source.fixAll": true,
-        "source.fixAll.eslint": true
-      }
+        "source.fixAll.eslint": true,
+      },
     },
     "JavaScript": {
       "code_actions_on_format": {
         "source.organizeImports": true,
         "source.fixAll": true,
-        "source.fixAll.eslint": true
-      }
-    }
+        "source.fixAll.eslint": true,
+      },
+    },
   },
   // Editor
   "ssh_connections": [
@@ -48,17 +63,41 @@
       "host": "gitlab.inverselink.com",
       "args": [],
       "projects": []
+    },
+    {
+      "host": "192.168.50.138",
+      "username": "blackpi",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/blackpi"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "192.168.50.138",
+      "username": "blackpi",
+      "args": [],
+      "projects": []
+    },
+    {
+      "host": "192.168.50.138",
+      "username": "blackpi",
+      "args": [],
+      "projects": []
     }
   ],
   "diagnostics": {
     "inline": {
-      "enabled": false
-    }
+      "enabled": false,
+    },
   },
   "vim_mode": true,
   "vim": {
     "toggle_relative_line_numbers": true,
-    "use_smartcase_find": true
+    "use_smartcase_find": true,
   },
   "autosave": "on_focus_change",
   "auto_signature_help": true,
@@ -68,31 +107,32 @@
   "theme": {
     "mode": "system",
     "light": "Ayu Light",
-    "dark": "Vercel Dark"
+    "dark": "Vercel Dark",
   },
   "tabs": {
     "file_icons": true,
     "git_status": true,
     "activate_on_close": "history",
     "show_close_button": "hover",
-    "show_diagnostics": "all"
+    "show_diagnostics": "all",
   },
   "use_system_window_tabs": true,
   "pane_split_direction_horizontal": "down",
   "pane_split_direction_vertical": "right",
   "minimap": {
-    "show": "auto"
+    "show": "auto",
   },
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "indent_guides": {
-    "coloring": "fixed"
+    "coloring": "fixed",
   },
   "colorize_brackets": true,
   "soft_wrap": "editor_width",
   "outline_panel": { "button": false },
   "collaboration_panel": { "button": false },
   "notification_panel": { "button": false },
+  "which_key": { "enabled": true, "delay_ms": 0 },
   // LSP
   "go_to_definition_fallback": "none",
   "lsp": {
@@ -100,16 +140,16 @@
       "settings": {
         "typescript": {
           "preferences": {
-            "importModuleSpecifier": "non-relative"
-          }
+            "importModuleSpecifier": "non-relative",
+          },
         },
         "javascript": {
           "preferences": {
-            "importModuleSpecifier": "non-relative"
-          }
-        }
-      }
-    }
+            "importModuleSpecifier": "non-relative",
+          },
+        },
+      },
+    },
   },
   "inlay_hints": {
     "enabled": true,
@@ -125,17 +165,14 @@
       "alt": false,
       "shift": false,
       "platform": false,
-      "function": false
-    }
+      "function": false,
+    },
   },
   "agent": {
-    "default_profile": "ask",
+    "default_profile": "write",
     "default_model": {
-      "provider": "amazon-bedrock",
-      "model": "claude-sonnet-4-5"
-    }
+      "provider": "ollama",
+      "model": "gpt-oss:latest-32k",
+    },
   },
-  "features": {
-    "edit_prediction_provider": "copilot"
-  }
 }
