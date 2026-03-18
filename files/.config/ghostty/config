@@ -39,3 +39,8 @@ macos-option-as-alt = true
 shell-integration = zsh
 shell-integration-features = cursor, title, ssh-env, ssh-terminfo, sudo
 keybind = global:cmd+shift+backquote=toggle_quick_terminal
+
+# NOTIFICATIONS
+notify-on-command-finish = unfocused
+notify-on-command-finish-action = no-bell,notify
+notify-on-command-finish-after = 30s
