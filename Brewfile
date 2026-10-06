@@ -1,42 +1,52 @@
+# Machine type comes from brew.sh, which stores it in ~/.config/dotfiles/machine
+machine = ENV['MACHINE_TYPE'] || (File.read(File.expand_path('~/.config/dotfiles/machine')).strip rescue nil)
+
 # Always installed packages
 # =========================
 cask '1password'
-cask '1password-cli'
-cask 'ghostty'
-cask 'jordanbaird-ice'
-cask 'logi-options+'
-cask 'middle'
-cask 'spotify'
-cask 'tidal'
-cask 'zed'
 cask 'adguard'
+cask 'bettermouse'
+cask 'firefox'
+cask 'ghostty'
+cask 'keepassxc'
+cask 'middle'
+cask 'paseo'
+cask 'spotify'
+cask 'syncthing-app'
+cask 'tailscale-app'
+cask 'zed'
 
-brew 'btop'
 brew 'coreutils'
-brew 'curl'
+brew 'direnv'
 brew 'fzf'
-brew 'git'
-brew 'jq'
+brew 'gh'
 brew 'mise'
 brew 'neovim'
+brew 'pi-coding-agent'
 brew 'pure'
 brew 'ripgrep'
+brew 'stow'
+brew 'uv'
 brew 'zoxide'
 brew 'zsh-completions'
 
 # Personal machine packages
 # =========================
-if ENV['PERSONAL_MACHINE']
+if machine == 'personal'
 end
 
 # Work machine packages
 # =====================
-if ENV['WORK_MACHINE']
+if machine == 'work'
   cask 'aws-vpn-client'
+  cask 'figma'
+  cask 'gcloud-cli'
+  cask 'linear'
   cask 'orbstack'
   cask 'slack'
-  cask 'figma'
 
   brew 'awscli'
   brew 'glab'
+  brew 'googleworkspace-cli'
+  brew 'snowflake-cli'
 end

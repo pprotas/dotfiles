@@ -16,22 +16,18 @@ brew upgrade
 
 # Machine type selection
 # ======================
-echo "[brew] INFO: Determining machine type..."
-read -p "Is this a personal or work laptop? (personal/work): " machine_type
-
-case "$machine_type" in
-  personal|p)
-    echo "[brew] INFO: Installing packages for personal machine"
-    PERSONAL_MACHINE=1 brew bundle
-    ;;
-  work|w)
-    echo "[brew] INFO: Installing packages for work machine"
-    WORK_MACHINE=1 brew bundle
-    ;;
-  *)
-    echo "[brew] WARNING: Invalid selection. Installing common packages only"
-    brew bundle
-    ;;
-esac
+machine_file="$HOME/.config/dotfiles/machine"
+if [[ ! -f "$machine_file" ]]; then
+  read -p "Is this a personal or work laptop? (personal/work): " machine_type
+  case "$machine_type" in
+    personal|p) machine_type=personal ;;
+    work|w) machine_type=work ;;
+    *) echo "[brew] ERROR: Invalid selection"; exit 1 ;;
+  esac
+  mkdir -p "$(dirname "$machine_file")"
+  echo "$machine_type" > "$machine_file"
+fi
+echo "[brew] INFO: Installing packages for $(cat "$machine_file") machine"
+brew bundle --file ~/dotfiles/Brewfile
 
 echo "[brew] INFO: Installation finished"

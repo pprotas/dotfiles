@@ -4,26 +4,13 @@
 # Special thanks to: GitHub Copilot and https://macos-defaults.com/finder/appleshowallextensions.html
 echo "[osconfig] INFO: Installation started"
 
-# Close any open System Preferences panes, to prevent them from overriding
-# settings we’re about to change
-osascript -e 'tell application "System Preferences" to quit'
-
-# Ask for the administrator password upfront
-sudo -v
-
-# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
-while true; do
-	sudo -n true
-	sleep 60
-	kill -0 "$$" || exit
-done 2>/dev/null &
+# Close System Settings so it doesn't override the settings below
+osascript -e 'tell application "System Settings" to quit'
 
 # Dock
 # ====
 # Show open application indicator
 defaults write com.apple.dock show-process-indicators -bool true
-# Restart Dock (execute last)
-killall Dock
 
 # Menu bar
 # ========
@@ -78,5 +65,8 @@ chflags nohidden ~/Library
 # ================
 # Update very often
 defaults write com.apple.ActivityMonitor UpdatePeriod -int 1
+
+# Apply Dock and Finder changes
+killall Dock Finder
 
 echo "[osconfig] INFO: Installation finished"

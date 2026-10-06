@@ -2,14 +2,12 @@
 
 echo "[install] INFO: Installation started"
 
-sudo cp bin/gpg-sign-wrapper.sh /usr/local/bin/gpg-sign-wrapper
-sudo chmod +x /usr/local/bin/gpg-sign-wrapper
+~/dotfiles/brew.sh
 
-git submodule update --init --recursive
+# Real dir so stow links its children; AWS VPN Client rejects a symlinked log path.
+mkdir -p ~/.config
+stow -d ~/dotfiles -t ~ files
 
-~/dotfiles/symlink.sh
-if [[ "$(uname)" == "Darwin" ]]; then
-	~/dotfiles/maco.sh
-fi
+~/dotfiles/osconfig.sh
 
 echo "[install] INFO: Installation finished"

@@ -32,19 +32,12 @@ alias e='$EDITOR'
 
 # General shell exports
 export EDITOR="zed --wait"
-export PATH="$HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # ruby
 export RUBY_YJIT_ENABLE=1
 
-if [[ "$(uname)" == "Darwin" ]]; then
-  # replace macOS BSD utils with GNU utils
-  PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-else
-  export GIT_SSH_COMMAND=ssh.exe
-  alias ssh='ssh.exe'
-  alias ssh-add='ssh-add.exe'
-fi
+# replace macOS BSD utils with GNU utils
+PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 
 # mise
 eval "$(mise activate zsh)"
@@ -57,15 +50,8 @@ export FZF_CTRL_T_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{**/node_mod
 # z
 eval "$(zoxide init zsh)"
 
-# pnpm
-export PNPM_HOME="/Users/pawel/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-# op
-source /Users/pawel/.config/op/plugins.sh
-
-# claude
+# user-local binaries
 export PATH="$HOME/.local/bin:$PATH"
+
+# direnv hook
+eval "$(direnv hook zsh)"

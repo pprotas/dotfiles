@@ -4,15 +4,13 @@
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII874qsVN3P+1Fjo28tOZOcJiMsDtNQZuXqdBzXMq6mC
 [core]
   excludesfile = ~/.gitignore_global
-  autocrlf = input
-  attributesfile = ~/.gitattributes
 [init]
   defaultBranch = main
 
 [gpg]
   format = ssh
 [gpg "ssh"]
-  program = gpg-sign-wrapper
+  program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
   gpgsign = true
 
