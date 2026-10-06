@@ -7,6 +7,12 @@
 // from the command palette.
 [
   {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "s": "vim::HelixJumpToWord",
+    },
+  },
+  {
     "context": "(VimControl && !menu)",
     "bindings": {
       "space": null, // Disable the default action vim::WrappingRight

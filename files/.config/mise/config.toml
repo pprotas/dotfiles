@@ -5,6 +5,8 @@ python = "latest"
 ruby = "latest"
 lua = "latest"
 rust = "latest"
+tflint = "latest"
+terraform = "1.14.3"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]

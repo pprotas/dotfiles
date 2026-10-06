@@ -36,3 +36,6 @@ vault = "Personal"
 
 [[ssh-keys]]
 vault = "Ravrs"
+
+[[ssh-keys]]
+vault = "Dev"
