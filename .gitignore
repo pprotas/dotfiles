@@ -1,3 +1,7 @@
+files/.gitconfig_h1
+files/.config/git/work.inc
+files/.ssh/work.config
+files/.ssh/github-work.pub
 files/.config/gh/hosts.yml
 files/.config/zed/conversations
 files/.config/zed/embeddings/semantic-index-db.0.mdb

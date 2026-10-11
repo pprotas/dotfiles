@@ -1,7 +1,7 @@
 [user]
   name = Pawel Protas
   email = contact@pawelprotas.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII874qsVN3P+1Fjo28tOZOcJiMsDtNQZuXqdBzXMq6mC
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAwszij0fuhnHIxtnjRrXo/njqLWST7lB9zqL+FvbKR8
 [core]
   excludesfile = ~/.gitignore_global
 [init]
@@ -9,8 +9,6 @@
 
 [gpg]
   format = ssh
-[gpg "ssh"]
-  program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
   gpgsign = true
 
@@ -43,5 +41,5 @@
 [alias]
   s = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | fzf --reverse --height=20% --info=inline | xargs git checkout"
 
-[includeIf "gitdir:~/Projects/h1/"]
+[include]
   path = ~/.gitconfig_h1
