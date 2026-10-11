@@ -41,5 +41,7 @@
 [alias]
   s = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | fzf --reverse --height=20% --info=inline | xargs git checkout"
 
+# Optional private file: match work remotes with includeIf and select work identity/signing.
+# Rewrite work GitHub org URLs to github-work; keep all work settings outside dotfiles.
 [include]
-  path = ~/.gitconfig_h1
+  path = ~/.gitconfig_work
